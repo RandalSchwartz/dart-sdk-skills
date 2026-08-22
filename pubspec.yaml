@@ -1,0 +1,9 @@
+name: dart_sdk_skills
+description: Agent skills for Dart SDK versioning, language features, core library APIs, and minSdk lookups.
+version: 1.0.0
+homepage: https://github.com/RandalSchwartz/dart-sdk-skills
+repository: https://github.com/RandalSchwartz/dart-sdk-skills
+publish_to: none
+
+environment:
+  sdk: ^3.5.0

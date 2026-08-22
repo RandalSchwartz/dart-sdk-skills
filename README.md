@@ -1,6 +1,6 @@
 # Dart & Flutter SDK Skills (`dart-sdk-skills`) 🎯
 
-Authoritative, version-by-version agent skills for the **Dart & Flutter SDKs**: language features, core APIs, experimental feature flags (`--enable-experiment`), widget deprecations, Material 3 migrations, `minSdk` compatibility, and **legacy codebase rescue (Dart 1.0 & Flutter 1.0 to modern Dart 3.x & Flutter 3.24+)**.
+Authoritative, version-by-version agent skills for the **Dart & Flutter SDKs**: language features, core APIs, experimental feature flags (`--enable-experiment`), static metaprogramming (Macros & Augmentations), widget deprecations, Material 3 migrations, `minSdk` compatibility, and **legacy codebase rescue (Dart 1.0 & Flutter 1.0 to modern Dart 3.x & Flutter 3.24+)**.
 
 Designed to bridge LLM training cutoff gaps, ensuring AI coding agents (Claude Code, Google Antigravity, OpenAI Codex, GitHub Copilot, Cursor, Cline) write syntactically and semantically correct code across all target SDKs.
 
@@ -44,7 +44,8 @@ This repository bundles two top-level, progressively disclosed skills:
 
 ### 1. `dart-sdk-changelog` (Dart Language & Core APIs)
 * **`SKILL.md`**: Core router, activation triggers, and fast `minSdk` matrix.
-* **`experimental-features-guide.md`**: Complete guide to `--enable-experiment`, macros, augmentations, and historical graduation matrix.
+* **`macros-and-augmentations-guide.md`**: Syntax and mechanics for `augment`, `augmented()`, `import augment`, `@JsonCodable()`, and the 3-phase macro pipeline.
+* **`experimental-features-guide.md`**: Complete guide to `--enable-experiment`, Beta preview vs. stable-gated release tiers, and graduation history.
 * **`rescuing-legacy-dart-apps.md`**: 4-stage pipeline for migrating Dart 1.x & pre-2.12 codebases to modern Dart 3.x.
 * **`how-to-find-minsdk.md`**: Systematic methodology for finding `minSdk` lower bounds.
 * **`version-matrix.md`**: Searchable matrix mapping every feature and API to introducing Dart versions.

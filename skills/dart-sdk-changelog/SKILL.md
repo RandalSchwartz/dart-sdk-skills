@@ -1,16 +1,16 @@
 ---
 name: dart-sdk-changelog
 description: >-
-  Expert guide and lookup reference for the Dart SDK CHANGELOG, version history, and experimental features from Dart 1.x to modern Dart 3.x.
+  Expert guide and lookup reference for the Dart SDK CHANGELOG, version history, experimental features, macros, and augmentations from Dart 1.x to modern Dart 3.x.
   Use this skill whenever the user asks "what's new in Dart X", "what's new in 3.13", "what's new in 3.12",
   asks how to find the minimum SDK version (minSdk) for any language feature or core API,
-  needs guidance on experimental feature flags (--enable-experiment, macros, primary constructors in preview),
+  needs guidance on experimental feature flags (--enable-experiment), macros, and augmentations (augment, augmented(), import augment),
   or requires assistance rescuing and modernizing legacy Dart 1.x / pre-2.12 codebases to modern Dart 3.x.
 ---
 
 # Dart SDK Changelog & Version Feature Guide (Dart 1.x to Modern Dart 3.x)
 
-This skill provides an authoritative, structured guide to Dart language features, core library APIs, tooling changes, version requirements, experimental feature flags (`--enable-experiment`), and legacy modernization runbooks sourced directly from the official [Dart SDK CHANGELOG](https://github.com/dart-lang/sdk/blob/main/CHANGELOG.md).
+This skill provides an authoritative, structured guide to Dart language features, core library APIs, tooling changes, version requirements, experimental feature flags (`--enable-experiment`), static metaprogramming (Macros & Augmentations), and legacy modernization runbooks sourced directly from the official [Dart SDK CHANGELOG](https://github.com/dart-lang/sdk/blob/main/CHANGELOG.md).
 
 ---
 
@@ -62,25 +62,21 @@ When writing or reviewing Dart code, selecting the correct minimum SDK lower bou
 
 ## ⚡ Subskill Spotlights
 
+### Subskill: Augmentations & Static Metaprogramming (Macros)
+- **Augmentation Syntax**: Declare `augment class`, `import augment`, and wrap methods using `augmented()`.
+- **Macro Phases**: Understand Type, Declaration, and Definition macro execution in the analysis server.
+- **In-Memory Code Gen**: Eliminate `build_runner` with zero-disk `.g.dart` pollution.
+👉 *Read the full [Macros & Augmentations Guide](references/macros-and-augmentations-guide.md).*
+
 ### Subskill: Experimental Features & Compiler Flags (`--enable-experiment`)
 - **Enabling Experiments**: Configure `analysis_options.yaml` (`analyzer.enable-experiment`), CLI flags (`dart --enable-experiment=...`), and VS Code settings.
-- **Active Exploration**: Guidance on macros, augmentations, and native assets.
-- **Graduation Matrix**: Historical tracking of which experiment flags graduated into stable language versions.
+- **Release Pipeline**: Understand the graduation path across Beta preview, Stable-gated, and Stable-ungated tiers.
 👉 *Read the full [Experimental Features Guide](references/experimental-features-guide.md).*
 
 ### Subskill: Rescuing Legacy Codebases (Dart 1.x & Pre-2.12 to Modern Dart)
 - **Sound Null Safety Migration**: Transform `@required` annotations, uninitialized nullable fields, and defensive runtime assertions.
 - **Dependency Upgrades**: Modernize `pubspec.yaml` environment bounds and replace deprecated legacy packages (`pedantic`, `tuple`, etc.).
-- **Modernization Pipeline**: Step legacy codebases through super-initializers, pattern matching, sealed classes, and primary constructors.
 👉 *Read the full [Legacy Codebase Rescue Guide](references/rescuing-legacy-dart-apps.md).*
-
-### Subskill: What's New in Dart 3.13
-- **Primary Constructors**: Declare fields and constructor parameters directly in the class header (`class Point(var int x, var int y);`).
-- **Constructor `this` Body**: Define assertions and initializer bodies with `this : assert(...) { ... }`.
-- **Constructor Shorthands**: Declare body constructors with `new(...)` and `factory clone(...)` without repeating class name.
-- **Core Libraries**: `Future.pause`, `List.unmodifiableOf`, `Map.unmodifiableOf`, `int.trailingZeroBitCount`, `int.oneBitCount`, `InterfaceAddress`, synchronous isolate APIs (`Isolate.runSync`, `create`, `pinToCurrentThread`), and generic `JSFunction<T>` / `JSExportedDartFunction<T>`.
-- **Tooling & Linter**: LSP Inline Values, Flutter Widget Previews, `no_raw_types` and `no_dynamic_casts` lint rules, `use_primary_constructors` lint, `dart pub workspace list`.
-👉 *Read the full [Dart 3.13 Breakdown](references/whats-new-in-dart-3-13.md).*
 
 ---
 
@@ -88,7 +84,8 @@ When writing or reviewing Dart code, selecting the correct minimum SDK lower bou
 
 | Release / Guide | Focus Area | Key Additions | Reference Document |
 | :--- | :--- | :--- | :--- |
-| **Experimental Features** | Compiler Flags | `--enable-experiment`, macros, augmentations, graduation history, IDE configs | [Experiments Guide](references/experimental-features-guide.md) |
+| **Macros & Augmentations** | Metaprogramming | `augment`, `augmented()`, `import augment`, `@JsonCodable()`, 3-phase macro pipeline | [Macros & Augmentations Guide](references/macros-and-augmentations-guide.md) |
+| **Experimental Features** | Compiler Flags | `--enable-experiment`, Beta preview vs stable-gated release tiers, graduation matrix | [Experiments Guide](references/experimental-features-guide.md) |
 | **Legacy Rescue** | Migration Runbook | Dart 1.x/2.x to Modern 3.x modernization pipeline, null-safety bridge, package replacements | [Rescue Guide](references/rescuing-legacy-dart-apps.md) |
 | **Dart 3.14** | FFI & JS Interop | `NativeFinalizer.callback`, fast primitive JS array conversions | [3.14 Reference](references/whats-new-in-dart-3-14.md) |
 | **Dart 3.13** | Language & Runtime | Primary constructors, `this` constructor body, `new`/`factory` shorthands, `Future.pause`, synchronous isolates | [3.13 Reference](references/whats-new-in-dart-3-13.md) |
@@ -106,18 +103,23 @@ When writing or reviewing Dart code, selecting the correct minimum SDK lower bou
 
 ## 🛠️ Recommended Runbooks
 
-### 1. Working with Experimental Feature Flags
+### 1. Working with Augmentations & Macros
+1. Review [Macros & Augmentations Guide](references/macros-and-augmentations-guide.md).
+2. Wire original files with `import augment 'foo.g.dart';` and augmentation files with `augment library 'foo.dart';`.
+3. Use `augment class`, `augment void method()`, and call `augmented()` to wrap original logic.
+
+### 2. Working with Experimental Feature Flags
 1. Check if the feature has already graduated to stable in the active SDK before adding a flag.
 2. If experimental, configure `analysis_options.yaml` under `analyzer.enable-experiment: [name]`.
 3. Pass `--enable-experiment=name` to `dart run`, `dart test`, `flutter run`, and `flutter test`.
 4. Ensure experimental code is isolated so production packages remain publishable on pub.dev.
 
-### 2. Modernizing / Rescuing a Legacy Codebase
+### 3. Modernizing / Rescuing a Legacy Codebase
 1. Check current language version from `pubspec.yaml` environment block.
 2. If pre-2.12, read the [Legacy Rescue Guide](references/rescuing-legacy-dart-apps.md).
 3. Execute the 4-stage pipeline: syntax cleanup &rarr; sound null safety &rarr; dependency bump (`sdk: ^3.5.0` or `^3.13.0`) &rarr; Dart 3 modernization.
 
-### 3. Answering "What's New in Dart X.Y"
+### 4. Answering "What's New in Dart X.Y"
 1. Identify the requested version.
 2. Read the corresponding reference document under `references/`.
 3. Provide:
@@ -126,7 +128,7 @@ When writing or reviewing Dart code, selecting the correct minimum SDK lower bou
    - **Tooling and CLI features** (`dart analyze`, `dart format`, `dart pub`, `dart build`).
    - **Breaking changes and migration instructions**.
 
-### 4. Answering "How to find minSdk for X"
+### 5. Answering "How to find minSdk for X"
 1. Check the [Language Feature Matrix](references/version-matrix.md) and [How to Find minSdk Guide](references/how-to-find-minsdk.md).
 2. Specify the exact lower bound SDK constraint for `pubspec.yaml` (for example `sdk: '^3.13.0'`).
 3. Explain if the feature is a language grammar feature (requiring language version update) or a core library API.

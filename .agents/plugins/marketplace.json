@@ -1,0 +1,20 @@
+{
+  "name": "dart-sdk-skills",
+  "interface": {
+    "displayName": "Dart SDK Skills"
+  },
+  "plugins": [
+    {
+      "name": "dart-sdk-changelog",
+      "source": {
+        "source": "local",
+        "path": "./skills/dart-sdk-changelog"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

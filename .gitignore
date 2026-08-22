@@ -1,3 +1,10 @@
 .DS_Store
 *.swp
 *~
+.dart_tool/
+.idea/
+.vscode/
+*.log
+scratch/
+.agents/
+.config/

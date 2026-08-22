@@ -104,12 +104,12 @@ User({required this.id, this.name});
 ### 2. Class Field Nullability Disambiguation
 Audit every uninitialized field. Choose the correct null-safety pattern:
 
-| Scenario | Legacy Pre-2.12 | Modern Null-Safe Solution |
-| :--- | :--- | :--- |
-| **Can legitimately be null** | `String? nickname;` | `String? nickname;` |
-| **Always provided in constructor** | `String id;` | `final String id;` (initialized in constructor) |
-| **Initialized before first use in lifecycle** | `AnimationController controller;` | `late final AnimationController controller;` |
-| **Has a default value** | `int count;` | `int count = 0;` |
+| Scenario                                      | Legacy Pre-2.12                   | Modern Null-Safe Solution                       |
+| :-------------------------------------------- | :-------------------------------- | :---------------------------------------------- |
+| **Can legitimately be null**                  | `String? nickname;`               | `String? nickname;`                             |
+| **Always provided in constructor**            | `String id;`                      | `final String id;` (initialized in constructor) |
+| **Initialized before first use in lifecycle** | `AnimationController controller;` | `late final AnimationController controller;`    |
+| **Has a default value**                       | `int count;`                      | `int count = 0;`                                |
 
 ### 3. Replace Manual Null Assertions with Compiler Guarantees
 Pre-null-safety code is filled with defensive runtime checks. Remove them when types are non-nullable:
@@ -160,12 +160,12 @@ environment:
 ### 2. Replace Deprecated Legacy Packages
 Many legacy packages have been superseded or built directly into modern Dart/Flutter:
 
-| Legacy Package | Status | Modern Replacement |
-| :--- | :--- | :--- |
-| `pedantic` | Deprecated | `flutter_lints` or `very_good_analysis` |
-| `tuple` | Superseded | Native Dart 3 Records `(A, B)` |
-| `meta` (for `@required`) | Built-in | Language keyword `required` |
-| `provider` / `bloc` (legacy stream) | Heavyweight | `bloc_signals` / `signals` / `kaisel` |
+| Legacy Package                      | Status      | Modern Replacement                      |
+| :---------------------------------- | :---------- | :-------------------------------------- |
+| `pedantic`                          | Deprecated  | `flutter_lints` or `very_good_analysis` |
+| `tuple`                             | Superseded  | Native Dart 3 Records `(A, B)`          |
+| `meta` (for `@required`)            | Built-in    | Language keyword `required`             |
+| `provider` / `bloc` (legacy stream) | Heavyweight | `bloc_signals` / `signals` / `kaisel`   |
 
 ---
 

@@ -22,7 +22,7 @@ npx skills add RandalSchwartz/dart-sdk-skills
 ### Option 2: Using the Dart `skills` CLI
 ```bash
 # Install globally
-skills add https://github.com/RandalSchwartz/dart-sdk-skills --global
+skills add https://github.com/RandalSchwartz/dart-sdk-skills --global --all
 
 # Or install locally
 skills add https://github.com/RandalSchwartz/dart-sdk-skills
@@ -76,6 +76,15 @@ The `dart-sdk-changelog` skill includes comprehensive reference documents coveri
 | **Constructor Tear-Offs** | `2.15.0` | `List.filled`, `Point.new` |
 | **Sound Null Safety** | `2.12.0` | Sound static non-nullable types (`?`, `late`, `!`) |
 | **Extension Methods** | `2.7.0` | `extension on String { ... }` |
+
+---
+
+## 🤖 Maintenance & Agent Upgrade Runbook
+
+For AI agents and maintainers updating this repo when new Dart SDK versions are released, see the step-by-step instructions in [`AGENTS.md`](AGENTS.md):
+1. Source upstream entries from [`dart-lang/sdk CHANGELOG.md`](https://github.com/dart-lang/sdk/blob/main/CHANGELOG.md).
+2. Create `skills/dart-sdk-changelog/references/whats-new-in-dart-X-Y.md` with side-by-side before/after code snippets and API additions.
+3. Update `SKILL.md`, `version-matrix.md`, and `README.md`.
 
 ---
 

@@ -2,9 +2,8 @@
 name: flutter-sdk-changelog
 description: >-
   Expert guide and lookup reference for Flutter framework versions, widget deprecations, API replacements, and Material 3 migrations from Flutter 1.0 to modern Flutter (3.24+).
-  Use this skill whenever the user asks "what's new in Flutter X", "what's new in 3.24", "what's new in 3.22",
-  asks how to fix deprecated Flutter widgets (WillPopScope, withOpacity, MaterialState, FlatButton, accentColor),
-  needs assistance migrating to Material 3, or requires help rescuing legacy Flutter applications.
+  Use this skill whenever writing, reviewing, refactoring, or debugging Flutter UI, widgets, styling, or theming to ensure non-deprecated modern Flutter 3.24+ APIs are used (e.g. Color.withValues instead of withOpacity, WidgetState instead of MaterialState, PopScope instead of WillPopScope, NavigationBar instead of BottomNavigationBar).
+  Also use when the user asks "what's new in Flutter X", asks how to fix deprecated Flutter widgets, needs Material 3 migration help, or requires assistance rescuing legacy Flutter applications.
 ---
 
 # Flutter SDK Changelog & Widget Migration Guide (Flutter 1.0 to Modern Flutter)

@@ -99,8 +99,21 @@ This repository bundles two top-level, progressively disclosed skills:
 
 For AI agents and maintainers updating this repo when new Dart or Flutter SDK versions are released, see [`AGENTS.md`](AGENTS.md).
 
+### Local Validation & Quality Gates
+```bash
+# Verify static analysis & style standards
+dart analyze --fatal-infos
+
+# Run comprehensive link integrity and skill validation tests
+dart test
+
+# Refresh skill hashes & index in skills-lock.json
+dart run tool/update_skills_index.dart
+```
+
 ---
 
 ## 📄 License
 
 MIT © 2026 [Randal L. Schwartz](https://github.com/RandalSchwartz)
+

@@ -2,8 +2,9 @@
 name: flutter-sdk-changelog
 description: >-
   Expert guide and lookup reference for Flutter framework versions, widget deprecations, API replacements, and Material 3 migrations from Flutter 1.0 to modern Flutter (3.24+).
-  Use this skill whenever writing, reviewing, refactoring, or debugging Flutter UI, widgets, styling, or theming to ensure non-deprecated modern Flutter 3.24+ APIs are used (e.g. Color.withValues instead of withOpacity, WidgetState instead of MaterialState, PopScope instead of WillPopScope, NavigationBar instead of BottomNavigationBar).
-  Also use when the user asks "what's new in Flutter X", asks how to fix deprecated Flutter widgets, needs Material 3 migration help, or requires assistance rescuing legacy Flutter applications.
+  Use this skill whenever the user asks "what's new in Flutter X", "what's new in 3.24", "what's new in 3.22",
+  asks how to fix deprecated Flutter widgets (WillPopScope, withOpacity, MaterialState, FlatButton, accentColor),
+  needs assistance migrating to Material 3, or requires help rescuing legacy Flutter applications.
 ---
 
 # Flutter SDK Changelog & Widget Migration Guide (Flutter 1.0 to Modern Flutter)
@@ -56,3 +57,27 @@ This skill provides an authoritative, structured reference for Flutter framework
 | [`widget-deprecations-and-replacements.md`](references/widget-deprecations-and-replacements.md) | Widget Dictionary | Before/After code snippets for all deprecated Flutter widgets and properties. |
 | [`material-2-to-material-3-guide.md`](references/material-2-to-material-3-guide.md) | UI & Theming | Comprehensive Material 3 migration guide, dynamic color schemes, and new components. |
 | [`rescuing-legacy-flutter-apps.md`](references/rescuing-legacy-flutter-apps.md) | Upgrade Runbook | 5-phase structured runbook for stepping legacy Flutter apps to modern Flutter. |
+
+---
+
+## 🛠️ Recommended Runbooks
+
+### 1. Migrating Deprecated Widgets & Properties
+1. Identify the deprecated widget or property (for example `WillPopScope`, `Color.withOpacity`, `MaterialStateProperty`).
+2. Consult the [Widget Deprecations Guide](references/widget-deprecations-and-replacements.md).
+3. Replace with the modern declarative equivalent (for example `PopScope`, `Color.withValues(alpha: ...)`, `WidgetStateProperty`).
+
+### 2. Migrating to Material 3
+1. Review the [Material 2 to Material 3 Guide](references/material-2-to-material-3-guide.md).
+2. Configure `ThemeData` using `ColorScheme.fromSeed(seedColor: ...)`.
+3. Replace legacy navigation bars (`BottomNavigationBar` &rarr; `NavigationBar`) and controls (`ToggleButtons` &rarr; `SegmentedButton`).
+
+### 3. Upgrading / Rescuing Legacy Flutter Apps
+1. Determine current Flutter and Dart versions from `pubspec.yaml` environment block.
+2. Follow the 5-phase pipeline in the [Legacy Flutter App Rescue Runbook](references/rescuing-legacy-flutter-apps.md):
+   - Check toolchain &rarr; Sound Null Safety bridge &rarr; Widget deprecations &rarr; Material 3 theme &rarr; Modern routing & reactive state.
+
+### 4. Answering "What's New in Flutter X.Y"
+1. Match the Flutter version in the [Flutter to Dart Version Matrix](references/flutter-to-dart-version-matrix.md).
+2. State the bundled Dart SDK version, major framework milestones, and engine updates.
+

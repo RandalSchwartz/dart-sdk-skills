@@ -131,7 +131,7 @@ Macros build on top of Augmentations. A **Macro** is a compile-time Dart class t
 
 ---
 
-### 3. Using Built-in Experimental Macros (e.g. `@JsonCodable`)
+### 3. Using Built-in Experimental Macros (for example `@JsonCodable`)
 
 In experimental Dart builds (`--enable-experiment=macros`):
 

@@ -77,11 +77,11 @@ dart run my_tool@^1.2.0
 
 ### Pub Enhancements
 - **Package repair by lockfile**: `dart pub cache repair` now only repairs packages referenced by the current project's `pubspec.lock` by default (use `--all` for full repair).
-- **`@` separator**: `dart pub add` and `dart pub unpack` accept `@` as an alternative to `:` (e.g., `dart pub add http@^1.2.0`).
+- **`@` separator**: `dart pub add` and `dart pub unpack` accept `@` as an alternative to `:` (for example `dart pub add http@^1.2.0`).
 - **Git LFS**: Git dependencies now support Git Large File Storage (LFS).
 
 ### Analyzer & Linter
-- **`simple_directive_paths` lint**: Flags unnecessarily complex import/export paths (e.g., `./` or backtracking `../`). Supports automated bulk fixing with `dart fix --apply`.
+- **`simple_directive_paths` lint**: Flags unnecessarily complex import/export paths (for example `./` or backtracking `../`). Supports automated bulk fixing with `dart fix --apply`.
 - **`prefer_initializing_formals` lint**: Updated to recommend private named parameter syntax where applicable.
 - **`avoid_final_parameters`**: Now supported by `dart fix`.
 - **`@mustBeConst` warning**: Warns when functions with `@mustBeConst` parameters are torn off.

@@ -40,3 +40,7 @@ Whenever a new Flutter version (for example `3.27.0`, `3.30.0`, `4.0.0`) is rele
 1. **Precision**: All `minSdk` and Flutter version numbers must reflect official release changelogs accurately.
 2. **Phrasing Standard**: Never use abbreviations `e.g.` (use **"for example"**) or `i.e.` (use **"that is"**).
 3. **Code Examples**: Provide runnable, modern, and idiomatic Dart & Flutter code snippets demonstrating new syntax and widgets.
+4. **Verification & Indexing**:
+   - Run `dart run tool/update_skills_index.dart` after modifying any `SKILL.md` to refresh `skills-lock.json` and computed SHA-256 hashes.
+   - Run `dart test` and `dart analyze --fatal-infos` to verify that all links, YAML frontmatters, and style constraints pass quality gates.
+

@@ -7,9 +7,9 @@ This guide provides a comprehensive methodology for determining the minimum Dart
 ## 1. Core Principles of Dart Language Versioning
 
 ### Language Version vs. SDK Version
-- **Dart SDK Version**: The version of the compiler and tools toolchain (e.g., `3.13.0`, `3.12.2`).
-- **Language Version**: Specified in `pubspec.yaml` by the lower bound of the SDK constraint (major.minor, e.g., `3.13` or `3.12`).
-  - Patch versions (e.g., `.1`, `.2`) are ignored for language syntax features. Language features are tied to `major.minor`.
+- **Dart SDK Version**: The version of the compiler and tools toolchain (for example `3.13.0`, `3.12.2`).
+- **Language Version**: Specified in `pubspec.yaml` by the lower bound of the SDK constraint (major.minor, for example `3.13` or `3.12`).
+  - Patch versions (for example `.1`, `.2`) are ignored for language syntax features. Language features are tied to `major.minor`.
   - For example, `sdk: '^3.13.0'` sets the language version to `3.13`.
   - A feature introduced in `3.13` will **not** compile if the SDK constraint lower bound is `3.12.0`, even if your local Dart SDK binary is `3.13.0`.
 
@@ -76,11 +76,11 @@ When identifying the minimum SDK for a feature or API:
 ```
 
 ### Step 1: Distinguish Syntax Features vs. Library APIs
-1. **Language Syntax / Grammar** (e.g., Primary constructors, Private named parameters, Wildcard `_`, Records, Extension types):
+1. **Language Syntax / Grammar** (for example Primary constructors, Private named parameters, Wildcard `_`, Records, Extension types):
    - Controlled strictly by the **Language Version** (`pubspec.yaml` lower bound).
    - If the language version is too low, the analyzer/compiler throws a syntax error or a diagnostic:
      `"This requires the '<feature>' language feature. Try updating your pubspec.yaml SDK constraint to '>=X.Y.0 <4.0.0'."`
-2. **Platform / Core Library APIs** (e.g., `Future.pause`, `List.unmodifiableOf`, `int.trailingZeroBitCount`, `Isolate.runSync`):
+2. **Platform / Core Library APIs** (for example `Future.pause`, `List.unmodifiableOf`, `int.trailingZeroBitCount`, `Isolate.runSync`):
    - Introduced in specific SDK releases.
    - Look for the `@Since('X.Y')` annotation in the SDK sources or the `Libraries` section of `CHANGELOG.md`.
 

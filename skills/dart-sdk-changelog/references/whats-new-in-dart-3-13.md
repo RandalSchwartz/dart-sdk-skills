@@ -223,14 +223,14 @@ environment:
 ```
 
 ```yaml
-# Published library pubspec.yaml (e.g. bloc_signals/pubspec.yaml)
+# Published library pubspec.yaml (for example bloc_signals/pubspec.yaml)
 environment:
   sdk: ^3.5.0
 ```
 
 ### Why This Works:
 1. **Per-Package Language Versioning**: The Dart compiler evaluates language syntax per-package based on the package's declared `environment.sdk` lower bound.
-2. **Automated Protection**: If any 3.13-only syntax (e.g. primary constructors) is written in a package declaring `sdk: ^3.5.0`, `dart analyze` immediately rejects it with a compiler error.
+2. **Automated Protection**: If any 3.13-only syntax (for example primary constructors) is written in a package declaring `sdk: ^3.5.0`, `dart analyze` immediately rejects it with a compiler error.
 3. **Zero Downstream Friction**: Consumers of published packages only resolve the package's individual `pubspec.yaml`, allowing them to remain on Dart 3.5+.
 
 ---

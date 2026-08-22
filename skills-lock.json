@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "dart-sdk-changelog": {
+      "source": "RandalSchwartz/dart-sdk-skills",
+      "sourceType": "github",
+      "skillPath": "skills/dart-sdk-changelog/SKILL.md",
+      "computedHash": "b537b693699370ee853d68ab1b68af54c4e604c9b32249cf17d2721a60cc73b5"
+    },
+    "flutter-sdk-changelog": {
+      "source": "RandalSchwartz/dart-sdk-skills",
+      "sourceType": "github",
+      "skillPath": "skills/flutter-sdk-changelog/SKILL.md",
+      "computedHash": "48149478a026052eef0fe3997bc88b807465649489a8fd1dd15afa4105292b19"
+    }
+  }
+}

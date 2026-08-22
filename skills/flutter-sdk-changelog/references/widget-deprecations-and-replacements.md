@@ -223,3 +223,63 @@ ScaffoldMessenger.of(context).showSnackBar(
   const SnackBar(content: Text('Saved!')),
 );
 ```
+
+---
+
+## 8. Control Tinting & `WidgetStateProperty`
+
+### Why it Changed (Flutter 3.22+)
+Direct color properties like `activeColor` and `fillColor` accepting single static colors on `Radio`, `Checkbox`, and `Switch` prevented responsive state animations across hover, focus, and press interactions. Flutter unified control colors under `WidgetStateProperty<Color>`.
+
+```dart
+// ❌ Deprecated (Flutter <3.22)
+Radio<int>(
+  value: 1,
+  groupValue: selectedVal,
+  activeColor: Colors.blue,
+  onChanged: (v) => setState(() => selectedVal = v),
+);
+
+// ✅ Modern (Flutter 3.22+)
+Radio<int>(
+  value: 1,
+  groupValue: selectedVal,
+  fillColor: WidgetStateProperty.resolveWith<Color>((states) {
+    if (states.contains(WidgetState.selected)) return Colors.blue;
+    if (states.contains(WidgetState.disabled)) return Colors.grey;
+    return Colors.black54;
+  }),
+  onChanged: (v) => setState(() => selectedVal = v),
+);
+```
+
+---
+
+## 9. String Routing ➔ Declarative Routing
+
+### Why it Changed (Flutter 2.0+ / Modern Flutter)
+Legacy imperative string routing (`Navigator.pushNamed(context, '/detail')`) lacked deep linking synchronization, type-safe arguments, and web browser history / back button support. Modern Flutter applications use declarative routing built on `MaterialApp.router` with sealed routes (such as [`kaisel`](https://pub.dev/packages/kaisel) or `go_router`).
+
+```dart
+// ❌ Deprecated / Fragile String Routing (Flutter 1.x)
+Navigator.pushNamed(
+  context,
+  '/detail',
+  arguments: {'id': 123}, // Untyped dynamic map
+);
+
+// In target widget:
+final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+
+// ✅ Modern Declarative Type-Safe Routing (for example Kaisel / Sealed Routes)
+sealed class AppRoute {}
+class HomeRoute extends AppRoute {}
+class DetailRoute extends AppRoute {
+  final int id;
+  DetailRoute({required this.id});
+}
+
+// Navigation call:
+KaiselRouter.of(context).push(DetailRoute(id: 123));
+```
+

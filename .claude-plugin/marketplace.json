@@ -8,15 +8,7 @@
   "plugins": [
     {
       "name": "dart-sdk-skills",
-      "source": {
-        "source": "local",
-        "path": "./"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Developer Tools",
+      "source": "./",
       "description": "Authoritative version-by-version agent skills for the Dart SDK and Flutter framework, including minSdk verification, widget replacements, and legacy modernization."
     }
   ]

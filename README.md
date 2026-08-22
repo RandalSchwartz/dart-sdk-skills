@@ -1,5 +1,8 @@
 # Dart & Flutter SDK Skills (`dart-sdk-skills`) 🎯
 
+[![CI](https://github.com/RandalSchwartz/dart-sdk-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/RandalSchwartz/dart-sdk-skills/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Authoritative, version-by-version agent skills for the **Dart & Flutter SDKs**: language features, core APIs, experimental feature flags (`--enable-experiment`), static metaprogramming (Macros & Augmentations), widget deprecations, Material 3 migrations, `minSdk` compatibility, and **legacy codebase rescue (Dart 1.0 & Flutter 1.0 to modern Dart 3.x & Flutter 3.24+)**.
 
 Designed to bridge LLM training cutoff gaps, ensuring AI coding agents (Claude Code, Google Antigravity, OpenAI Codex, GitHub Copilot, Cursor, Cline) write syntactically and semantically correct code across all target SDKs.

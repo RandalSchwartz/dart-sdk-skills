@@ -62,36 +62,36 @@ This repository bundles two top-level, progressively disclosed skills:
 
 ## 🚀 Fast Language Feature Matrix
 
-| Feature / Syntax | Minimum SDK | Example Syntax |
-| :--- | :--- | :--- |
-| **Primary Constructors** | `3.13.0` | `class Point(var int x, var int y);` / `this : assert(...)` |
-| **Constructor Keyword Shorthands** | `3.13.0` | `new(this.x);` / `factory clone(...) => ...;` |
-| **Private Named Parameters** | `3.12.0` | `Point({required this._x, required this._y});` |
-| **Wildcard Variables (`_`)** | `3.7.0` | `var (_, b) = pair;` / `void fn(int _, int _)` |
-| **Digit Separators** | `3.6.0` | `1_000_000`, `0x4000_0000`, `0.000_001` |
-| **Extension Types** | `3.3.0` | `extension type Meters(int value) {}` |
-| **Private Field Promotion** | `3.2.0` | `if (_privateFinalField != null) { ... }` |
-| **Records & Tuples** | `3.0.0` | `(int, String) pair = (1, 'a');` |
-| **Patterns & Destructuring** | `3.0.0` | `var (a, b) = pair;` / `if (json case {'id': int id})` |
-| **Switch Expressions** | `3.0.0` | `var s = switch (e) { 0 => 'a', _ => 'b' };` |
-| **Sealed Classes** | `3.0.0` | `sealed class State {}` |
-| **Enhanced Enums** | `2.17.0` | `enum Status { ok(200); final int c; const Status(this.c); }` |
-| **Super-Initializers** | `2.17.0` | `SubClass(super.name, {super.key});` |
-| **Sound Null Safety** | `2.12.0` | Sound static non-nullable types (`?`, `late`, `!`, `required`) |
+| Feature / Syntax                   | Minimum SDK | Example Syntax                                                 |
+| :--------------------------------- | :---------- | :------------------------------------------------------------- |
+| **Primary Constructors**           | `3.13.0`    | `class Point(var int x, var int y);` / `this : assert(...)`    |
+| **Constructor Keyword Shorthands** | `3.13.0`    | `new(this.x);` / `factory clone(...) => ...;`                  |
+| **Private Named Parameters**       | `3.12.0`    | `Point({required this._x, required this._y});`                 |
+| **Wildcard Variables (`_`)**       | `3.7.0`     | `var (_, b) = pair;` / `void fn(int _, int _)`                 |
+| **Digit Separators**               | `3.6.0`     | `1_000_000`, `0x4000_0000`, `0.000_001`                        |
+| **Extension Types**                | `3.3.0`     | `extension type Meters(int value) {}`                          |
+| **Private Field Promotion**        | `3.2.0`     | `if (_privateFinalField != null) { ... }`                      |
+| **Records & Tuples**               | `3.0.0`     | `(int, String) pair = (1, 'a');`                               |
+| **Patterns & Destructuring**       | `3.0.0`     | `var (a, b) = pair;` / `if (json case {'id': int id})`         |
+| **Switch Expressions**             | `3.0.0`     | `var s = switch (e) { 0 => 'a', _ => 'b' };`                   |
+| **Sealed Classes**                 | `3.0.0`     | `sealed class State {}`                                        |
+| **Enhanced Enums**                 | `2.17.0`    | `enum Status { ok(200); final int c; const Status(this.c); }`  |
+| **Super-Initializers**             | `2.17.0`    | `SubClass(super.name, {super.key});`                           |
+| **Sound Null Safety**              | `2.12.0`    | Sound static non-nullable types (`?`, `late`, `!`, `required`) |
 
 ---
 
 ## 🎨 Fast Flutter Widget Replacement Matrix
 
-| Deprecated / Obsolete API | Modern Replacement | Target Flutter Version |
-| :--- | :--- | :--- |
-| **`Color.withOpacity(o)`** | `Color.withValues(alpha: o)` | Flutter 3.22+ |
-| **`MaterialState` / `MaterialStateProperty`** | `WidgetState` / `WidgetStateProperty` | Flutter 3.22+ |
-| **`WillPopScope`** | `PopScope(canPop: ..., onPopInvokedWithResult: ...)` | Flutter 3.12+ |
-| **`FlatButton`, `RaisedButton`** | `TextButton`, `ElevatedButton` | Flutter 2.0+ |
-| **`TextTheme.headline6`, `bodyText2`** | `TextTheme.titleLarge`, `bodyMedium` | Flutter 3.7+ |
-| **`BottomNavigationBar`** | `NavigationBar` (Material 3) | Flutter 3.0+ |
-| **`ToggleButtons`** | `SegmentedButton<T>` (Material 3) | Flutter 3.7+ |
+| Deprecated / Obsolete API                     | Modern Replacement                                   | Target Flutter Version |
+| :-------------------------------------------- | :--------------------------------------------------- | :--------------------- |
+| **`Color.withOpacity(o)`**                    | `Color.withValues(alpha: o)`                         | Flutter 3.22+          |
+| **`MaterialState` / `MaterialStateProperty`** | `WidgetState` / `WidgetStateProperty`                | Flutter 3.22+          |
+| **`WillPopScope`**                            | `PopScope(canPop: ..., onPopInvokedWithResult: ...)` | Flutter 3.12+          |
+| **`FlatButton`, `RaisedButton`**              | `TextButton`, `ElevatedButton`                       | Flutter 2.0+           |
+| **`TextTheme.headline6`, `bodyText2`**        | `TextTheme.titleLarge`, `bodyMedium`                 | Flutter 3.7+           |
+| **`BottomNavigationBar`**                     | `NavigationBar` (Material 3)                         | Flutter 3.0+           |
+| **`ToggleButtons`**                           | `SegmentedButton<T>` (Material 3)                    | Flutter 3.7+           |
 
 ---
 

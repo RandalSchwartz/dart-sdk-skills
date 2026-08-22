@@ -6,17 +6,17 @@ A definitive migration dictionary of deprecated Flutter widgets, properties, met
 
 ## 🧭 Fast Replacement Index
 
-| Deprecated / Obsolete API | Introduced In / Deprecated In | Modern Replacement | Reference Section |
-| :--- | :--- | :--- | :--- |
-| `Color.withOpacity()` | Deprecated in Flutter 3.22 | `Color.withValues(alpha: ...)` | [Color withValues](#1-colorwithopacity--colorwithvalues) |
-| `MaterialState` / `MaterialStateProperty` | Deprecated in Flutter 3.22 | `WidgetState` / `WidgetStateProperty` | [WidgetState Migration](#2-materialstate--widgetstate) |
-| `WillPopScope` | Deprecated in Flutter 3.12+ | `PopScope` | [PopScope Migration](#3-willpopscope--popscope) |
-| `FlatButton`, `RaisedButton`, `OutlineButton` | Deprecated in Flutter 2.0 | `TextButton`, `ElevatedButton`, `OutlinedButton` | [Button Hierarchy](#4-legacy-buttons--modern-material-buttons) |
-| `TextTheme.headline1...6`, `bodyText1/2` | Deprecated in Flutter 3.7+ | `displayLarge...small`, `bodyLarge/Medium` | [2021 Typography](#5-texttheme-typography-2021-migration) |
-| `ThemeData.accentColor`, `primaryColorBrightness` | Deprecated in Flutter 2.5+ | `ColorScheme.secondary`, `ColorScheme.brightness` | [ThemeData & ColorScheme](#6-themedata-accentcolor--colorscheme) |
-| `Scaffold.of(context).showSnackBar()` | Deprecated in Flutter 2.0 | `ScaffoldMessenger.of(context).showSnackBar()` | [ScaffoldMessenger](#7-scaffoldmessengershowsnackbar) |
-| `Radio.activeColor`, `Checkbox.activeColor` | Deprecated in Flutter 3.22 | `WidgetStateProperty.resolveWith(...)` | [Control Tinting](#8-control-tinting--widgetstateproperty) |
-| `Navigator.pushNamed` | Legacy string routing | `RouterConfig` / `kaisel` / `GoRouter` | [Declarative Routing](#9-string-routing--declarative-routing) |
+| Deprecated / Obsolete API                         | Introduced In / Deprecated In | Modern Replacement                                | Reference Section                                                |
+| :------------------------------------------------ | :---------------------------- | :------------------------------------------------ | :--------------------------------------------------------------- |
+| `Color.withOpacity()`                             | Deprecated in Flutter 3.22    | `Color.withValues(alpha: ...)`                    | [Color withValues](#1-colorwithopacity--colorwithvalues)         |
+| `MaterialState` / `MaterialStateProperty`         | Deprecated in Flutter 3.22    | `WidgetState` / `WidgetStateProperty`             | [WidgetState Migration](#2-materialstate--widgetstate)           |
+| `WillPopScope`                                    | Deprecated in Flutter 3.12+   | `PopScope`                                        | [PopScope Migration](#3-willpopscope--popscope)                  |
+| `FlatButton`, `RaisedButton`, `OutlineButton`     | Deprecated in Flutter 2.0     | `TextButton`, `ElevatedButton`, `OutlinedButton`  | [Button Hierarchy](#4-legacy-buttons--modern-material-buttons)   |
+| `TextTheme.headline1...6`, `bodyText1/2`          | Deprecated in Flutter 3.7+    | `displayLarge...small`, `bodyLarge/Medium`        | [2021 Typography](#5-texttheme-typography-2021-migration)        |
+| `ThemeData.accentColor`, `primaryColorBrightness` | Deprecated in Flutter 2.5+    | `ColorScheme.secondary`, `ColorScheme.brightness` | [ThemeData & ColorScheme](#6-themedata-accentcolor--colorscheme) |
+| `Scaffold.of(context).showSnackBar()`             | Deprecated in Flutter 2.0     | `ScaffoldMessenger.of(context).showSnackBar()`    | [ScaffoldMessenger](#7-scaffoldmessengershowsnackbar)            |
+| `Radio.activeColor`, `Checkbox.activeColor`       | Deprecated in Flutter 3.22    | `WidgetStateProperty.resolveWith(...)`            | [Control Tinting](#8-control-tinting--widgetstateproperty)       |
+| `Navigator.pushNamed`                             | Legacy string routing         | `RouterConfig` / `kaisel` / `GoRouter`            | [Declarative Routing](#9-string-routing--declarative-routing)    |
 
 ---
 
@@ -157,20 +157,20 @@ OutlinedButton(
 Material 3 introduced a unified 15-style typographic scale replacing the older 2018 scale (`headline1` through `headline6`, `bodyText1/2`, `subtitle1/2`):
 
 | 2018 Scale (Deprecated) | 2021 Scale (Modern Material 3) |
-| :--- | :--- |
-| `headline1` | `displayLarge` |
-| `headline2` | `displayMedium` |
-| `headline3` | `displaySmall` |
-| `headline4` | `headlineMedium` |
-| `headline5` | `headlineSmall` |
-| `headline6` | `titleLarge` |
-| `subtitle1` | `titleMedium` |
-| `subtitle2` | `titleSmall` |
-| `bodyText1` | `bodyLarge` |
-| `bodyText2` | `bodyMedium` |
-| `caption` | `bodySmall` |
-| `button` | `labelLarge` |
-| `overline` | `labelSmall` |
+| :---------------------- | :----------------------------- |
+| `headline1`             | `displayLarge`                 |
+| `headline2`             | `displayMedium`                |
+| `headline3`             | `displaySmall`                 |
+| `headline4`             | `headlineMedium`               |
+| `headline5`             | `headlineSmall`                |
+| `headline6`             | `titleLarge`                   |
+| `subtitle1`             | `titleMedium`                  |
+| `subtitle2`             | `titleSmall`                   |
+| `bodyText1`             | `bodyLarge`                    |
+| `bodyText2`             | `bodyMedium`                   |
+| `caption`               | `bodySmall`                    |
+| `button`                | `labelLarge`                   |
+| `overline`              | `labelSmall`                   |
 
 ```dart
 // ❌ Deprecated (Flutter <3.7)

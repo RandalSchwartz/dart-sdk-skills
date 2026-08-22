@@ -1,6 +1,6 @@
 # Dart SDK Skills (`dart-sdk-skills`) 🎯
 
-Authoritative, version-by-version agent skills for the **Dart SDK CHANGELOG**, language features, core library APIs, breaking changes, and `minSdk` compatibility.
+Authoritative, version-by-version agent skills for the **Dart SDK CHANGELOG**, language features, core library APIs, breaking changes, `minSdk` compatibility, and **legacy codebase rescue (Dart 1.x & pre-2.12 to modern Dart 3.x)**.
 
 Designed to bridge LLM training cutoff gaps, ensuring AI coding agents (Claude Code, Google Antigravity, OpenAI Codex, GitHub Copilot, Cursor, Cline) write syntactically and semantically correct Dart code for any targeted SDK lower bound.
 
@@ -39,11 +39,12 @@ ln -s ~/Projects/Dart/dart-sdk-skills/skills/dart-sdk-changelog ~/.gemini/config
 
 ## 🛠️ What's Included
 
-The `dart-sdk-changelog` skill includes comprehensive reference documents covering the entire history of Dart 2.x and Dart 3.x:
+The `dart-sdk-changelog` skill includes comprehensive reference documents covering the entire history of Dart from Dart 1.x all the way to modern Dart 3.x:
 
 | Document | Description |
 | :--- | :--- |
 | [`SKILL.md`](skills/dart-sdk-changelog/SKILL.md) | Primary router, activation triggers, and fast lookup matrix. |
+| [`rescuing-legacy-dart-apps.md`](skills/dart-sdk-changelog/references/rescuing-legacy-dart-apps.md) | 4-stage runbook to migrate legacy Dart 1.x & pre-2.12 apps to modern Dart 3.x. |
 | [`how-to-find-minsdk.md`](skills/dart-sdk-changelog/references/how-to-find-minsdk.md) | Step-by-step verification methodology to find the correct `minSdk` constraint. |
 | [`version-matrix.md`](skills/dart-sdk-changelog/references/version-matrix.md) | Exhaustive version-to-feature matrix across all Dart releases. |
 | [`whats-new-in-dart-3-13.md`](skills/dart-sdk-changelog/references/whats-new-in-dart-3-13.md) | Primary constructors, constructor shorthands, modern ergonomics. |
@@ -56,7 +57,7 @@ The `dart-sdk-changelog` skill includes comprehensive reference documents coveri
 
 ---
 
-## 🚀 Fast Language Feature Matrix
+## 🚀 Fast Language Feature Matrix (Dart 1.x to Modern Dart)
 
 | Feature / Syntax | Minimum SDK | Example Syntax |
 | :--- | :--- | :--- |
@@ -74,8 +75,10 @@ The `dart-sdk-changelog` skill includes comprehensive reference documents coveri
 | **Enhanced Enums** | `2.17.0` | `enum Status { ok(200); final int c; const Status(this.c); }` |
 | **Super-Initializers** | `2.17.0` | `SubClass(super.name, {super.key});` |
 | **Constructor Tear-Offs** | `2.15.0` | `List.filled`, `Point.new` |
-| **Sound Null Safety** | `2.12.0` | Sound static non-nullable types (`?`, `late`, `!`) |
+| **Sound Null Safety** | `2.12.0` | Sound static non-nullable types (`?`, `late`, `!`, `required`) |
 | **Extension Methods** | `2.7.0` | `extension on String { ... }` |
+| **Spread Operators** | `2.3.0` | `[...list1, ...?maybeList]` |
+| **Optional `new` / Sound Types** | `2.0.0` | `Widget()` instead of `new Widget()` |
 
 ---
 

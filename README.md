@@ -1,18 +1,18 @@
-# Dart SDK Skills (`dart-sdk-skills`) 🎯
+# Dart & Flutter SDK Skills (`dart-sdk-skills`) 🎯
 
-Authoritative, version-by-version agent skills for the **Dart SDK CHANGELOG**, language features, core library APIs, breaking changes, `minSdk` compatibility, and **legacy codebase rescue (Dart 1.x & pre-2.12 to modern Dart 3.x)**.
+Authoritative, version-by-version agent skills for the **Dart & Flutter SDKs**: language features, core APIs, widget deprecations, Material 3 migrations, `minSdk` compatibility, and **legacy codebase rescue (Dart 1.0 & Flutter 1.0 to modern Dart 3.x & Flutter 3.24+)**.
 
-Designed to bridge LLM training cutoff gaps, ensuring AI coding agents (Claude Code, Google Antigravity, OpenAI Codex, GitHub Copilot, Cursor, Cline) write syntactically and semantically correct Dart code for any targeted SDK lower bound.
+Designed to bridge LLM training cutoff gaps, ensuring AI coding agents (Claude Code, Google Antigravity, OpenAI Codex, GitHub Copilot, Cursor, Cline) write syntactically and semantically correct code across all target SDKs.
 
 ---
 
-## 📦 Installation
+## 📦 Single-Command Universal Installation
 
-Install globally or into your local project workspace with any compatible skill package manager:
+Install both skills globally or into your local project workspace with any compatible package manager:
 
 ### Option 1: Using `npx skills` (Node / universal)
 ```bash
-# Install globally for your agent
+# Install globally for all agents
 npx skills add RandalSchwartz/dart-sdk-skills -g
 
 # Or install for a specific project
@@ -29,35 +29,36 @@ skills add https://github.com/RandalSchwartz/dart-sdk-skills
 ```
 
 ### Option 3: Manual Installation for Google Antigravity
-Clone or symlink the skill directory into your Antigravity config:
+Clone or symlink the skill directories into your Antigravity config:
 ```bash
 git clone https://github.com/RandalSchwartz/dart-sdk-skills.git ~/Projects/Dart/dart-sdk-skills
 ln -s ~/Projects/Dart/dart-sdk-skills/skills/dart-sdk-changelog ~/.gemini/config/skills/dart-sdk-changelog
+ln -s ~/Projects/Dart/dart-sdk-skills/skills/flutter-sdk-changelog ~/.gemini/config/skills/flutter-sdk-changelog
 ```
 
 ---
 
-## 🛠️ What's Included
+## 🛠️ Included Skills
 
-The `dart-sdk-changelog` skill includes comprehensive reference documents covering the entire history of Dart from Dart 1.x all the way to modern Dart 3.x:
+This repository bundles two top-level, progressively disclosed skills:
 
-| Document | Description |
-| :--- | :--- |
-| [`SKILL.md`](skills/dart-sdk-changelog/SKILL.md) | Primary router, activation triggers, and fast lookup matrix. |
-| [`rescuing-legacy-dart-apps.md`](skills/dart-sdk-changelog/references/rescuing-legacy-dart-apps.md) | 4-stage runbook to migrate legacy Dart 1.x & pre-2.12 apps to modern Dart 3.x. |
-| [`how-to-find-minsdk.md`](skills/dart-sdk-changelog/references/how-to-find-minsdk.md) | Step-by-step verification methodology to find the correct `minSdk` constraint. |
-| [`version-matrix.md`](skills/dart-sdk-changelog/references/version-matrix.md) | Exhaustive version-to-feature matrix across all Dart releases. |
-| [`whats-new-in-dart-3-13.md`](skills/dart-sdk-changelog/references/whats-new-in-dart-3-13.md) | Primary constructors, constructor shorthands, modern ergonomics. |
-| [`whats-new-in-dart-3-12.md`](skills/dart-sdk-changelog/references/whats-new-in-dart-3-12.md) | Private named parameters, modern typing updates. |
-| [`whats-new-in-dart-3-11.md`](skills/dart-sdk-changelog/references/whats-new-in-dart-3-11.md) | Incremental language and tooling updates. |
-| [`whats-new-in-dart-3-10.md`](skills/dart-sdk-changelog/references/whats-new-in-dart-3-10.md) | Core library additions and performance features. |
-| [`whats-new-in-dart-3-6.md` ... `3-9`](skills/dart-sdk-changelog/references/) | Digit separators, wildcard variables (`_`), type inference improvements. |
-| [`whats-new-in-dart-3-0-to-3-5.md`](skills/dart-sdk-changelog/references/whats-new-in-dart-3-0-to-3-5.md) | Sound null safety, records, patterns, sealed classes, switch expressions. |
-| [`dart-2-milestones.md`](skills/dart-sdk-changelog/references/dart-2-milestones.md) | Enhanced enums, super-initializers, constructor tear-offs, extension methods. |
+### 1. `dart-sdk-changelog` (Dart Language & Core APIs)
+* **`SKILL.md`**: Core router, activation triggers, and fast `minSdk` matrix.
+* **`rescuing-legacy-dart-apps.md`**: 4-stage pipeline for migrating Dart 1.x & pre-2.12 codebases to modern Dart 3.x.
+* **`how-to-find-minsdk.md`**: Systematic methodology for finding `minSdk` lower bounds.
+* **`version-matrix.md`**: Searchable matrix mapping every feature and API to introducing Dart versions.
+* **Version Reference Guides**: Detailed breakdowns for Dart 2.x milestones and every Dart 3.x release (3.0 through 3.14).
+
+### 2. `flutter-sdk-changelog` (Flutter Framework & Widgets)
+* **`SKILL.md`**: Fast widget & API replacement matrix.
+* **`widget-deprecations-and-replacements.md`**: Complete before/after dictionary (`WillPopScope` ➔ `PopScope`, `Color.withOpacity` ➔ `Color.withValues`, `MaterialState` ➔ `WidgetState`, 2021 `TextTheme`).
+* **`material-2-to-material-3-guide.md`**: Full M2 to M3 theming, `ColorScheme.fromSeed`, and component migration.
+* **`flutter-to-dart-version-matrix.md`**: Complete mapping from Flutter 1.0 to 3.27+ with bundled Dart SDKs and engine milestones.
+* **`rescuing-legacy-flutter-apps.md`**: 5-phase structured runbook for stepping legacy Flutter apps to modern Flutter.
 
 ---
 
-## 🚀 Fast Language Feature Matrix (Dart 1.x to Modern Dart)
+## 🚀 Fast Language Feature Matrix
 
 | Feature / Syntax | Minimum SDK | Example Syntax |
 | :--- | :--- | :--- |
@@ -74,20 +75,27 @@ The `dart-sdk-changelog` skill includes comprehensive reference documents coveri
 | **Sealed Classes** | `3.0.0` | `sealed class State {}` |
 | **Enhanced Enums** | `2.17.0` | `enum Status { ok(200); final int c; const Status(this.c); }` |
 | **Super-Initializers** | `2.17.0` | `SubClass(super.name, {super.key});` |
-| **Constructor Tear-Offs** | `2.15.0` | `List.filled`, `Point.new` |
 | **Sound Null Safety** | `2.12.0` | Sound static non-nullable types (`?`, `late`, `!`, `required`) |
-| **Extension Methods** | `2.7.0` | `extension on String { ... }` |
-| **Spread Operators** | `2.3.0` | `[...list1, ...?maybeList]` |
-| **Optional `new` / Sound Types** | `2.0.0` | `Widget()` instead of `new Widget()` |
+
+---
+
+## 🎨 Fast Flutter Widget Replacement Matrix
+
+| Deprecated / Obsolete API | Modern Replacement | Target Flutter Version |
+| :--- | :--- | :--- |
+| **`Color.withOpacity(o)`** | `Color.withValues(alpha: o)` | Flutter 3.22+ |
+| **`MaterialState` / `MaterialStateProperty`** | `WidgetState` / `WidgetStateProperty` | Flutter 3.22+ |
+| **`WillPopScope`** | `PopScope(canPop: ..., onPopInvokedWithResult: ...)` | Flutter 3.12+ |
+| **`FlatButton`, `RaisedButton`** | `TextButton`, `ElevatedButton` | Flutter 2.0+ |
+| **`TextTheme.headline6`, `bodyText2`** | `TextTheme.titleLarge`, `bodyMedium` | Flutter 3.7+ |
+| **`BottomNavigationBar`** | `NavigationBar` (Material 3) | Flutter 3.0+ |
+| **`ToggleButtons`** | `SegmentedButton<T>` (Material 3) | Flutter 3.7+ |
 
 ---
 
 ## 🤖 Maintenance & Agent Upgrade Runbook
 
-For AI agents and maintainers updating this repo when new Dart SDK versions are released, see the step-by-step instructions in [`AGENTS.md`](AGENTS.md):
-1. Source upstream entries from [`dart-lang/sdk CHANGELOG.md`](https://github.com/dart-lang/sdk/blob/main/CHANGELOG.md).
-2. Create `skills/dart-sdk-changelog/references/whats-new-in-dart-X-Y.md` with side-by-side before/after code snippets and API additions.
-3. Update `SKILL.md`, `version-matrix.md`, and `README.md`.
+For AI agents and maintainers updating this repo when new Dart or Flutter SDK versions are released, see [`AGENTS.md`](AGENTS.md).
 
 ---
 

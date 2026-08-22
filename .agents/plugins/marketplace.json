@@ -1,7 +1,7 @@
 {
   "name": "dart-sdk-skills",
   "interface": {
-    "displayName": "Dart SDK Skills"
+    "displayName": "Dart & Flutter SDK Skills"
   },
   "plugins": [
     {
@@ -9,6 +9,18 @@
       "source": {
         "source": "local",
         "path": "./skills/dart-sdk-changelog"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "flutter-sdk-changelog",
+      "source": {
+        "source": "local",
+        "path": "./skills/flutter-sdk-changelog"
       },
       "policy": {
         "installation": "AVAILABLE",

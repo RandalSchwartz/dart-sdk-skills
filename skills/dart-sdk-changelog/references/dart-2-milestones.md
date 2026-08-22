@@ -103,3 +103,11 @@ A historical and technical reference for all major Dart 2.x language and ecosyst
 ## Dart 2.0: The Rebirth of Dart
 - **Sound Type System**: Dynamic optional typing replaced with 100% sound static type checking and type inference.
 - **Optional `new` and `const`**: Constructors can be called directly without the `new` keyword (`Widget()` vs `new Widget()`).
+
+> [!NOTE]
+> **Disambiguating `new` in Dart Evolution**:
+> While `new` was rendered optional and obsolete for object instantiation at call sites in Dart 2.0, the keyword has specific modern roles:
+> 1. **Constructor Tear-Offs (Dart 2.15+)**: `Point.new` refers to the unnamed constructor as a function tear-off.
+> 2. **Extension Types (Dart 3.3+)**: `extension type E.new(int v)` declares the representation unnamed constructor.
+> 3. **Primary Constructor Shorthand (Dart 3.16+)**: `new(...)` and `new.named(...)` allow concise in-body constructor declarations without repeating the class name.
+

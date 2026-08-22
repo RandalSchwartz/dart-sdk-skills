@@ -63,6 +63,17 @@ Widget build() {
 }
 ```
 
+> [!NOTE]
+> **Disambiguation: The Evolution of the `new` Keyword Across Dart Versions**:
+> Do not confuse call-site instantiation with modern declaration syntax and tear-offs where `new` remains active and valid:
+> 
+> | Context | Dart Version | Syntax Example | Meaning |
+> | :--- | :--- | :--- | :--- |
+> | **Call Site (Instantiation)** | Dart 1.0 ➔ 2.0 | `new Widget()` | **Obsolete / Optional**; omit `new` (`Widget()`) |
+> | **Constructor Tear-Off** | Dart 2.15+ | `items.map(Point.new)` | **First-Class Function Reference** to unnamed constructor |
+> | **Extension Type Header** | Dart 3.3+ | `extension type Meters.new(int v)` | **Explicit Unnamed Primary Constructor** |
+> | **Class Constructor Declaration** | Dart 3.16+ | `new(this.x);` / `new.origin();` | **Concise In-Body Constructor Declaration** |
+
 ### 2. Add Explicit Static Types
 Dart 1.x allowed untyped variables that fell back to `dynamic`. Add explicit types or use `var`/`final` with sound inference:
 ```dart

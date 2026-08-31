@@ -8,7 +8,7 @@ An authoritative, searchable reference mapping every major Flutter release to it
 
 | Flutter Version | Bundled Dart SDK | Release Date | Headline Framework Milestones |
 | :--- | :--- | :--- | :--- |
-| **Flutter 3.27 / 3.29** | `Dart 3.7 / 3.8` | Late 2024 / 2025 | Impeller default on Android, Swift Package Manager support on iOS, Wasm production-ready |
+| **Flutter 3.27 / 3.29+** | `Dart 3.7 / 3.8+` | Late 2024 / 2025+ | `material_ui` & `cupertino_ui` unbundling, Impeller default on Android, Swift Package Manager support on iOS, Wasm production-ready |
 | **Flutter 3.24** | `Dart 3.5.0` | August 2024 | Flutter GPU preview, Impeller performance optimizations, web multi-view |
 | **Flutter 3.22** | `Dart 3.4.0` | May 2024 | `WidgetState` replaces `MaterialState`, `Color.withValues()`, Impeller default on Android Vulkan |
 | **Flutter 3.19** | `Dart 3.3.0` | February 2024 | `PopScope` API stabilization, Deeplinking Web validator, AnimationStyle API |

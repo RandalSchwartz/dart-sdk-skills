@@ -74,6 +74,7 @@ Run `flutter analyze` and systematically resolve compiler warnings using modern 
 2. Generate theme with `ColorScheme.fromSeed(seedColor: ...)`.
 3. Replace `BottomNavigationBar` with `NavigationBar`.
 4. Replace `ToggleButtons` with `SegmentedButton`.
+5. Migrate imports to decoupled design packages ([`material_ui`](material-ui-and-cupertino-ui-migration.md) and [`cupertino_ui`](material-ui-and-cupertino-ui-migration.md)) via `dart fix --apply --code=migrate_design_widgets`.
 
 ---
 

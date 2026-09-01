@@ -8,7 +8,9 @@ An authoritative, searchable reference mapping every major Flutter release to it
 
 | Flutter Version | Bundled Dart SDK | Release Date | Headline Framework Milestones |
 | :--- | :--- | :--- | :--- |
-| **Flutter 3.27 / 3.29+** | `Dart 3.7 / 3.8+` | Late 2024 / 2025+ | `material_ui` & `cupertino_ui` unbundling, Impeller default on Android, Swift Package Manager support on iOS, Wasm production-ready |
+| **Flutter 3.47+** | `Dart 3.13.x` | Mid 2026 | **Current Stable Milestone**: Primary Constructors (`class C(...)`), concise constructor bodies, full standalone `material_ui` (1.1.0) & `cupertino_ui` (1.0.1) stabilization |
+| **Flutter 3.44+** | `Dart 3.12.x` | Early 2026 | **Decoupled Architecture Milestone**: Standalone `material_ui` and `cupertino_ui` packages introduced (`sdk: ">=3.44.0"`), headless `package:flutter/widgets.dart` core architecture |
+| **Flutter 3.27 / 3.29** | `Dart 3.7 / 3.8` | Late 2024 / 2025 | Impeller default on Android, Swift Package Manager support on iOS, Wasm production-ready |
 | **Flutter 3.24** | `Dart 3.5.0` | August 2024 | Flutter GPU preview, Impeller performance optimizations, web multi-view |
 | **Flutter 3.22** | `Dart 3.4.0` | May 2024 | `WidgetState` replaces `MaterialState`, `Color.withValues()`, Impeller default on Android Vulkan |
 | **Flutter 3.19** | `Dart 3.3.0` | February 2024 | `PopScope` API stabilization, Deeplinking Web validator, AnimationStyle API |
@@ -34,10 +36,10 @@ An authoritative, searchable reference mapping every major Flutter release to it
 
 1. **`flutter --version` CLI output**:
    ```bash
-   Flutter 3.24.0 • channel stable
-   Framework • revision 8050ea76b4
-   Engine • revision 58d2b7e235
-   Tools • Dart 3.5.0 • DevTools 2.37.2
+   Flutter 3.47.2 • channel stable
+   Framework • revision d3b14c8769
+   Engine • revision 1cf1c4773f
+   Tools • Dart 3.13.2 • DevTools 2.60.0
    ```
 2. **`pubspec.yaml` environment bounds**:
    ```yaml

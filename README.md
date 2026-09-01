@@ -3,7 +3,7 @@
 [![CI](https://github.com/RandalSchwartz/dart-sdk-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/RandalSchwartz/dart-sdk-skills/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Authoritative, version-by-version agent skills for the **Dart & Flutter SDKs**: language features, core APIs, experimental feature flags (`--enable-experiment`), static metaprogramming (Macros & Augmentations), widget deprecations, Material 3 migrations, `minSdk` compatibility, and **legacy codebase rescue (Dart 1.0 & Flutter 1.0 to modern Dart 3.x & Flutter 3.24+)**.
+Authoritative, version-by-version agent skills for the **Dart & Flutter SDKs**: language features, core APIs, experimental feature flags (`--enable-experiment`), static metaprogramming (Macros & Augmentations), widget deprecations, Material 3 migrations, `minSdk` compatibility, and **legacy codebase rescue (Dart 1.0 & Flutter 1.0 to modern Dart 3.13+ & Flutter 3.47+)**.
 
 Designed to bridge LLM training cutoff gaps, ensuring AI coding agents (Claude Code, Google Antigravity, OpenAI Codex, GitHub Copilot, Cursor, Cline) write syntactically and semantically correct code across all target SDKs.
 
@@ -59,7 +59,7 @@ This repository bundles two top-level, progressively disclosed skills:
 * **`material-ui-and-cupertino-ui-migration.md`**: Runbook and guide for the decoupling of standalone `material_ui` and `cupertino_ui` packages from the core framework.
 * **`widget-deprecations-and-replacements.md`**: Complete before/after dictionary (`WillPopScope` ➔ `PopScope`, `Color.withOpacity` ➔ `Color.withValues`, `MaterialState` ➔ `WidgetState`, 2021 `TextTheme`).
 * **`material-2-to-material-3-guide.md`**: Full M2 to M3 theming, `ColorScheme.fromSeed`, and component migration.
-* **`flutter-to-dart-version-matrix.md`**: Complete mapping from Flutter 1.0 to 3.27+ with bundled Dart SDKs and engine milestones.
+* **`flutter-to-dart-version-matrix.md`**: Complete mapping from Flutter 1.0 to 3.47+ with bundled Dart SDKs and engine milestones.
 * **`rescuing-legacy-flutter-apps.md`**: 5-phase structured runbook for stepping legacy Flutter apps to modern Flutter.
 
 ---
@@ -94,8 +94,8 @@ This repository bundles two top-level, progressively disclosed skills:
 | **`WillPopScope`**                            | `PopScope(canPop: ..., onPopInvokedWithResult: ...)` | Flutter 3.12+          |
 | **`FlatButton`, `RaisedButton`**              | `TextButton`, `ElevatedButton`                       | Flutter 2.0+           |
 | **`TextTheme.headline6`, `bodyText2`**        | `TextTheme.titleLarge`, `bodyMedium`                 | Flutter 3.7+           |
-| **`package:flutter/material.dart`**           | `package:material_ui/material_ui.dart`               | Decoupled Packages     |
-| **`package:flutter/cupertino.dart`**          | `package:cupertino_ui/cupertino_ui.dart`             | Decoupled Packages     |
+| **`package:flutter/material.dart`**           | `package:material_ui/material_ui.dart`               | Flutter 3.44+          |
+| **`package:flutter/cupertino.dart`**          | `package:cupertino_ui/cupertino_ui.dart`             | Flutter 3.44+          |
 | **`BottomNavigationBar`**                     | `NavigationBar` (Material 3)                         | Flutter 3.0+           |
 | **`ToggleButtons`**                           | `SegmentedButton<T>` (Material 3)                    | Flutter 3.7+           |
 

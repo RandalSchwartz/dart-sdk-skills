@@ -43,4 +43,5 @@ Whenever a new Flutter version (for example `3.27.0`, `3.30.0`, `4.0.0`) is rele
 4. **Verification & Indexing**:
    - Run `dart run tool/update_skills_index.dart` after modifying any `SKILL.md` to refresh `skills-lock.json` and computed SHA-256 hashes.
    - Run `dart test` and `dart analyze --fatal-infos` to verify that all links, YAML frontmatters, and style constraints pass quality gates.
+5. **Action-Oriented Skill Triggers**: When authoring or editing `SKILL.md` frontmatter descriptions, always use action-oriented, imperative coding triggers (for example "authoring or refactoring code", "inspecting pubspec.yaml sdk constraints", "writing control flow", "handling deprecated widgets") rather than passive conversational FAQ triggers (such as "whenever the user asks 'what's new in...'"). This guarantees autonomous agent routers activate the skill during proactive code generation.
 

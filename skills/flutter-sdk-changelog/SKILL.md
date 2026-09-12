@@ -1,11 +1,13 @@
 ---
 name: flutter-sdk-changelog
 description: >-
-  Expert guide and lookup reference for Flutter framework versions, widget deprecations, API replacements, Material 3 migrations, and the unbundling of standalone material_ui and cupertino_ui packages from Flutter 1.0 to modern Flutter (3.44+ / 3.47+).
-  Use this skill whenever the user asks "what's new in Flutter X", "what's new in 3.47", "what's new in 3.44", "what's new in 3.24", "what's new in 3.22",
-  asks how to fix deprecated Flutter widgets (WillPopScope, withOpacity, MaterialState, FlatButton, accentColor),
-  requests migration to the split or unbundled design packages ("migrate to split packages", "material_ui", "cupertino_ui"),
-  needs assistance migrating to Material 3, or requires help rescuing legacy Flutter applications.
+  Authoritative guide for Flutter framework APIs, widget lifecycle deprecations,
+  design package unbundling, and version changelogs from Flutter 1.0 through Flutter 3.x+.
+  Use this skill whenever authoring Flutter widgets, inspecting flutter sdk constraints,
+  handling deprecated widgets (WillPopScope, withOpacity, MaterialState, FlatButton),
+  migrating to standalone design libraries (material_ui, cupertino_ui),
+  verifying widget API availability against the project's Flutter minSdk,
+  or upgrading legacy Flutter applications.
 ---
 
 # Flutter SDK Changelog & Widget Migration Guide (Flutter 1.0 to Modern Flutter)

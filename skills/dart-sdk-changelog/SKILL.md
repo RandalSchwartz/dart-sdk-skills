@@ -1,11 +1,13 @@
 ---
 name: dart-sdk-changelog
 description: >-
-  Expert guide and lookup reference for the Dart SDK CHANGELOG, version history, experimental features, macros, and augmentations from Dart 1.x to modern Dart 3.x.
-  Use this skill whenever the user asks "what's new in Dart X", "what's new in 3.13", "what's new in 3.12",
-  asks how to find the minimum SDK version (minSdk) for any language feature or core API,
-  needs guidance on experimental feature flags (--enable-experiment), macros, and augmentations (augment, augmented(), import augment),
-  or requires assistance rescuing and modernizing legacy Dart 1.x / pre-2.12 codebases to modern Dart 3.x.
+  Authoritative guide for Dart SDK language specifications, syntax availability,
+  minimum SDK constraints (minSdk), and version changelogs from Dart 1.x through Dart 3.x.
+  Use this skill whenever authoring or refactoring Dart code, inspecting pubspec.yaml sdk constraints,
+  writing control flow (switch statements, pattern matching, switch expressions),
+  implementing class constructors (primary constructors, parameter shorthands),
+  using macros/augmentations, verifying language feature availability against the project's minSdk,
+  or modernizing legacy codebases.
 ---
 
 # Dart SDK Changelog & Version Feature Guide (Dart 1.x to Modern Dart 3.x)

@@ -5,13 +5,13 @@
       "source": "RandalSchwartz/dart-sdk-skills",
       "sourceType": "github",
       "skillPath": "skills/dart-sdk-changelog/SKILL.md",
-      "computedHash": "b537b693699370ee853d68ab1b68af54c4e604c9b32249cf17d2721a60cc73b5"
+      "computedHash": "50ffb953dc5cce4e4aed98b909ef6c54451fcf486fb201d2d7c2c3fc6c77a395"
     },
     "flutter-sdk-changelog": {
       "source": "RandalSchwartz/dart-sdk-skills",
       "sourceType": "github",
       "skillPath": "skills/flutter-sdk-changelog/SKILL.md",
-      "computedHash": "fa5f7a6bb2bc18937a39e6c58063256a32a73329355352a12d35402b13d5e01f"
+      "computedHash": "e031e62407aa859116c56317dff4d075594211cac8d8d8248b81b58e694188f6"
     }
   }
 }

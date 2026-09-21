@@ -31,6 +31,8 @@ This skill provides an authoritative, structured reference for Flutter framework
 | **`package:flutter/cupertino.dart`** | Monolithic Flutter SDK | `package:cupertino_ui/cupertino_ui.dart` | [Material & Cupertino Migration](references/material-ui-and-cupertino-ui-migration.md) |
 | **`BottomNavigationBar`** | Legacy M2 Navigation | `NavigationBar` (Material 3) | [Material 3 Guide](references/material-2-to-material-3-guide.md) |
 | **`ToggleButtons`** | Legacy M2 Toggle | `SegmentedButton<T>` (Material 3) | [Material 3 Guide](references/material-2-to-material-3-guide.md) |
+| **`describeEnum(e)`** | Removed in Flutter 3.47 | `e.name` (Dart 2.15+ native property) | [Widget Deprecations](references/widget-deprecations-and-replacements.md) |
+| **`ReorderableListView.onReorder`** | Deprecated in Flutter 3.44 | `onReorderWithOldAndNewIndex` | [Widget Deprecations](references/widget-deprecations-and-replacements.md) |
 | **`PopupMenuButton`** | Legacy popup menu | `MenuAnchor` / `SubmenuButton` | [Material 3 Guide](references/material-2-to-material-3-guide.md) |
 
 ---

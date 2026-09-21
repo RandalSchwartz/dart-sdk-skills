@@ -59,7 +59,7 @@ This repository bundles two top-level, progressively disclosed skills:
 * **`material-ui-and-cupertino-ui-migration.md`**: Runbook and guide for the decoupling of standalone `material_ui` and `cupertino_ui` packages from the core framework.
 * **`widget-deprecations-and-replacements.md`**: Complete before/after dictionary (`WillPopScope` ➔ `PopScope`, `Color.withOpacity` ➔ `Color.withValues`, `MaterialState` ➔ `WidgetState`, 2021 `TextTheme`).
 * **`material-2-to-material-3-guide.md`**: Full M2 to M3 theming, `ColorScheme.fromSeed`, and component migration.
-* **`flutter-to-dart-version-matrix.md`**: Complete mapping from Flutter 1.0 to 3.47+ with bundled Dart SDKs and engine milestones.
+* **`flutter-to-dart-version-matrix.md`**: Complete mapping from Flutter 1.0 to 3.49+ with bundled Dart SDKs and engine milestones.
 * **`rescuing-legacy-flutter-apps.md`**: 5-phase structured runbook for stepping legacy Flutter apps to modern Flutter.
 
 ---
@@ -98,6 +98,8 @@ This repository bundles two top-level, progressively disclosed skills:
 | **`package:flutter/cupertino.dart`**          | `package:cupertino_ui/cupertino_ui.dart`             | Flutter 3.44+          |
 | **`BottomNavigationBar`**                     | `NavigationBar` (Material 3)                         | Flutter 3.0+           |
 | **`ToggleButtons`**                           | `SegmentedButton<T>` (Material 3)                    | Flutter 3.7+           |
+| **`describeEnum(e)`**                         | `e.name` (Dart 2.15+ native property)                | Flutter 3.47+          |
+| **`ReorderableListView.onReorder`**           | `onReorderWithOldAndNewIndex`                        | Flutter 3.44+          |
 
 ---
 

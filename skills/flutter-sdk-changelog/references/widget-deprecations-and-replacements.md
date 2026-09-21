@@ -16,6 +16,10 @@ A definitive migration dictionary of deprecated Flutter widgets, properties, met
 | `ThemeData.accentColor`, `primaryColorBrightness` | Deprecated in Flutter 2.5+    | `ColorScheme.secondary`, `ColorScheme.brightness` | [ThemeData & ColorScheme](#6-themedata-accentcolor--colorscheme) |
 | `Scaffold.of(context).showSnackBar()`             | Deprecated in Flutter 2.0     | `ScaffoldMessenger.of(context).showSnackBar()`    | [ScaffoldMessenger](#7-scaffoldmessengershowsnackbar)            |
 | `Radio.activeColor`, `Checkbox.activeColor`       | Deprecated in Flutter 3.22    | `WidgetStateProperty.resolveWith(...)`            | [Control Tinting](#8-control-tinting--widgetstateproperty)       |
+| `describeEnum()`                                  | Removed in Flutter 3.47       | `Enum.name` (Dart 2.15+ native property)          | [describeEnum Migration](#10-describeenum--enumname)             |
+| `ReorderableListView.onReorder`                   | Deprecated in Flutter 3.44    | `onReorderWithOldAndNewIndex`                     | [ReorderableListView onReorder](#11-reorderablelistview-onreorder--onreorderwitholdandnewindex) |
+| `TextInputConnection.setStyle`                    | Deprecated in Flutter 3.44    | Direct platform text input styling                | [TextInputConnection setStyle](#12-textinputconnectionsetstyle-deprecation) |
+| `cacheExtent` / `cacheExtentStyle`                | Deprecated in Flutter 3.44    | Viewport constraints & cache allocation           | [Scroll cacheExtent](#13-scroll-cacheextent--cacheextentstyle)   |
 | `Navigator.pushNamed`                             | Legacy string routing         | `RouterConfig` / `kaisel` / `GoRouter`            | [Declarative Routing](#9-string-routing--declarative-routing)    |
 
 ---
@@ -282,4 +286,78 @@ class DetailRoute extends AppRoute {
 // Navigation call:
 KaiselRouter.of(context).push(DetailRoute(id: 123));
 ```
+
+---
+
+## 10. `describeEnum()` ➔ `Enum.name`
+
+### Why it Changed (Flutter 3.47+)
+The legacy utility `describeEnum(Object enumEntry)` in `package:flutter/foundation.dart` existed in Flutter 1.x before Dart introduced native enum member properties. With Dart 2.15 introducing the built-in `.name` property on `Enum`, `describeEnum` became redundant and was formally removed in Flutter 3.47.
+
+```dart
+enum Status { pending, active, completed }
+
+// ❌ Removed in Flutter 3.47 (foundation.dart)
+final name = describeEnum(Status.active);
+
+// ✅ Modern (Dart 2.15+ / All Modern Flutter)
+final name = Status.active.name; // 'active'
+```
+
+---
+
+## 11. `ReorderableListView` `onReorder` ➔ `onReorderWithOldAndNewIndex`
+
+### Why it Changed (Flutter 3.44+)
+The legacy callback `onReorder(int oldIndex, int newIndex)` required developers to manually adjust `newIndex` when moving items downwards (that is, `if (oldIndex < newIndex) newIndex -= 1;`). The modern API `onReorderWithOldAndNewIndex` cleanly clarifies the semantic boundary:
+
+```dart
+// ❌ Deprecated in Flutter 3.44
+ReorderableListView(
+  onReorder: (oldIndex, newIndex) {
+    setState(() {
+      if (oldIndex < newIndex) {
+        newIndex -= 1;
+      }
+      final item = items.removeAt(oldIndex);
+      items.insert(newIndex, item);
+    });
+  },
+  children: [...],
+);
+
+// ✅ Modern (Flutter 3.44+)
+ReorderableListView(
+  onReorderWithOldAndNewIndex: (oldIndex, newIndex) {
+    setState(() {
+      final item = items.removeAt(oldIndex);
+      items.insert(newIndex, item);
+    });
+  },
+  children: [...],
+);
+```
+
+---
+
+## 12. `TextInputConnection.setStyle` Deprecation
+
+### Why it Changed (Flutter 3.44+)
+`TextInputConnection.setStyle` was deprecated in Flutter 3.44 because text styling parameters are now mediated directly by framework render objects (`RenderEditable`) and the modern platform text channel protocol rather than imperatively configured per connection.
+
+---
+
+## 13. Scroll `cacheExtent` & `cacheExtentStyle`
+
+### Why it Changed (Flutter 3.44+)
+Flutter 3.44 updated viewport scrolling internals to optimize rendering cache boundaries. When configuring custom cache extents on scrollable viewports (`ListView`, `CustomScrollView`, `GridView`), specify the viewport constraints directly rather than deprecated layout styles.
+
+---
+
+## 14. Upcoming Beta Features (Flutter 3.49+)
+
+### `DropdownButton` Enhancements
+In the Flutter 3.49 beta channel:
+- **`enabled` property**: Explicit boolean property added to `DropdownButton` to disable user interactions directly.
+- **Optional `onChanged`**: `onChanged` is no longer strictly required when `enabled: false` is supplied.
 

@@ -46,8 +46,13 @@ A searchable reference mapping language features, keywords, syntax constructs, a
 
 | API / Feature | Minimum Dart SDK | Library | Description |
 | :--- | :--- | :--- | :--- |
+| `rangeEquals` (typed lists & `ByteData`) | `3.14.0` | `dart:typed_data` | High-performance range equality comparison |
+| `Int32x4` SIMD vector additions | `3.14.0` | `dart:typed_data` | Bitwise negation `~`, `splat`, comparisons, `zero()` |
 | `NativeFinalizer.callback` | `3.14.0` | `dart:ffi` | Exposes callback pointer |
 | Primitive array conversions (`toDartDoubleList`, `toJS`) | `3.14.0` | `dart:js_interop` | High performance list-array conversions |
+| `JSArray.fromAsync` / `JSPromise.resolve`/`reject` | `3.14.0` | `dart:js_interop` | Async array creation and promise static helpers |
+| `toJSVarArgs` / `toJSCaptureThisVarArgs` | `3.14.0` | `dart:js_interop` | Direct JavaScript varargs capture into `JSArray` |
+| `@deprecated dart:mirrors` | `3.14.0` | `dart:mirrors` | Formal library deprecation ahead of future removal |
 | `Future.pause` | `3.13.0` | `dart:async` | Pause without callback closure |
 | `List.unmodifiableOf` | `3.13.0` | `dart:core` | Strongly-typed unmodifiable list copy |
 | `Map.unmodifiableOf` | `3.13.0` | `dart:core` | Strongly-typed unmodifiable map copy |

@@ -7,8 +7,8 @@ An authoritative, searchable reference mapping every major Flutter release to it
 ## 🧭 Complete Version Mapping (Flutter 1.0 to Present)
 
 | Flutter Version | Bundled Dart SDK | Release Date | Headline Framework Milestones |
-| :--- | :--- | :--- | :--- |
-| **Flutter 3.47+** | `Dart 3.13.x` | Mid 2026 | **Current Stable Milestone**: Primary Constructors (`class C(...)`), concise constructor bodies, full standalone `material_ui` (1.1.0) & `cupertino_ui` (1.0.1) stabilization |
+| **Flutter 3.49+ (Beta)** | `Dart 3.14.x` | September 2026 | **Current Beta Milestone**: Bundled with Dart 3.14 (SIMD vector operations, `rangeEquals`), `DropdownButton.enabled` property and optional `onChanged` |
+| **Flutter 3.47+** | `Dart 3.13.x` | Mid 2026 (v3.47.5 stable) | **Current Stable Milestone**: Primary Constructors (`class C(...)`), concise constructor bodies, full standalone `material_ui` (1.1.0) & `cupertino_ui` (1.0.1) stabilization, removal of `describeEnum` |
 | **Flutter 3.44+** | `Dart 3.12.x` | Early 2026 | **Decoupled Architecture Milestone**: Standalone `material_ui` and `cupertino_ui` packages introduced (`sdk: ">=3.44.0"`), headless `package:flutter/widgets.dart` core architecture |
 | **Flutter 3.27 / 3.29** | `Dart 3.7 / 3.8` | Late 2024 / 2025 | Impeller default on Android, Swift Package Manager support on iOS, Wasm production-ready |
 | **Flutter 3.24** | `Dart 3.5.0` | August 2024 | Flutter GPU preview, Impeller performance optimizations, web multi-view |
@@ -36,10 +36,10 @@ An authoritative, searchable reference mapping every major Flutter release to it
 
 1. **`flutter --version` CLI output**:
    ```bash
-   Flutter 3.47.2 • channel stable
-   Framework • revision d3b14c8769
-   Engine • revision 1cf1c4773f
-   Tools • Dart 3.13.2 • DevTools 2.60.0
+   Flutter 3.47.5 • channel stable
+   Framework • revision 6a19cca564
+   Engine • revision ab59836859
+   Tools • Dart 3.13.4 • DevTools 2.60.0
    ```
 2. **`pubspec.yaml` environment bounds**:
    ```yaml

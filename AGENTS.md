@@ -27,8 +27,11 @@ Whenever a new Dart SDK version (for example `3.15.0`, `3.16.0`, `4.0.0`) is rel
 
 ## 🔄 Runbook 2: Updating for New Flutter Framework Releases
 
-Whenever a new Flutter version (for example `3.27.0`, `3.30.0`, `4.0.0`) is released:
-1. **Source Upstream**: Inspect Flutter release notes and framework deprecations at `https://docs.flutter.dev/release/release-notes`.
+Whenever a new Flutter version (for example `3.47.0`, `3.50.0`, `4.0.0`) is released:
+1. **Source Upstream**:
+   - Query the official Google Cloud Storage archive manifest at `https://storage.googleapis.com/flutter_infra_release/releases/releases_linux.json` (or `https://flutterreleases.com/releases.json`) to confirm the exact canonical Flutter version, release date, and bundled Dart SDK version.
+   - For major `.0` feature releases, inspect release notes and framework deprecations at `https://docs.flutter.dev/release/release-notes`.
+   - For hotfix or patch releases (for example `3.47.5`), inspect the changelog anchor at `https://github.com/flutter/flutter/blob/stable/CHANGELOG.md`.
 2. **Update Version Matrix**: Add the release row to `skills/flutter-sdk-changelog/references/flutter-to-dart-version-matrix.md` with bundled Dart SDK and engine milestones.
 3. **Document Widget Deprecations**: Add newly deprecated widgets/methods to `skills/flutter-sdk-changelog/references/widget-deprecations-and-replacements.md`.
 4. **Update Fast Replacement Tables**: Update `skills/flutter-sdk-changelog/SKILL.md` and `README.md`.

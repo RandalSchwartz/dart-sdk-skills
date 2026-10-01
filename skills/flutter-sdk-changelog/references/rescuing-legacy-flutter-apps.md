@@ -38,6 +38,19 @@ A complete tactical guide for upgrading legacy Flutter applications (Flutter 1.x
    ```bash
    flutter pub upgrade
    ```
+4. **Apple Platform Toolchain Boundary (Flutter 3.44+ Swift Package Manager)**:
+   - When stepping across the **Flutter 3.44** boundary, the Flutter build toolchain defaults to **Swift Package Manager (SPM)** for Apple platform plugins instead of CocoaPods.
+   - Running `flutter run` automatically generates `FlutterGeneratedPluginSwiftPackage` attached to the `Runner` Xcode project.
+   - Flutter continues to support CocoaPods as a fallback for plugins that have not yet published a `Package.swift` manifest.
+   - Once all plugins provide SPM support, remove legacy CocoaPods artifacts:
+     ```bash
+     cd ios
+     pod deintegrate
+     rm -rf Podfile Podfile.lock Pods .symlinks
+     cd ..
+     flutter build ios --config-only
+     ```
+   - For Add-to-App projects upgrading to Flutter 3.44+, generate the SPM framework wrapper via `flutter build swift-package --platform ios`.
 
 ---
 

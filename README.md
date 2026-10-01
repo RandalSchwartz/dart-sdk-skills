@@ -121,6 +121,12 @@ dart run tool/update_skills_index.dart
 
 ---
 
+## 🌐 Community Resources & Live Trackers
+
+* [FlutterReleases.com](https://flutterreleases.com): Independent live Flutter SDK release tracker, archive explorer, and interactive Flutter/Dart compatibility checker.
+
+---
+
 ## 📄 License
 
 MIT © 2026 [Randal L. Schwartz](https://github.com/RandalSchwartz)

@@ -58,6 +58,17 @@ void processSimd() {
 }
 ```
 
+#### SIMD `toString()` Output Change
+- **Breaking Change**: `toString()` on SIMD vector types (`Float32x4`, `Int32x4`, and `Float64x2`) now returns `'V128'` instead of a formatted list of lane values. The previous per-lane output was unspecified and inconsistent across platforms. This representation also applies to `Error.safeToString` and debugger/VM service views (SDK issue [#63847](https://github.com/dart-lang/sdk/issues/63847)).
+
+---
+
+### `dart:io`
+
+#### Mac Process Spawning (`posix_spawn`)
+- Process spawning on macOS switched from `fork`-and-`exec` to `posix_spawn`.
+- `PATH` resolution now resolves using the parent process environment's `PATH` rather than the child process `PATH`. Supplying an absolute executable path to `Process.start` or `Process.run` is recommended to prevent platform-specific path resolution discrepancies.
+
 ---
 
 ### `dart:js_interop`

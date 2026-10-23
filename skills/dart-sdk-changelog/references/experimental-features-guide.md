@@ -74,7 +74,7 @@ Every active experimental flag shipped in Dart/Flutter stable binaries:
 | **`const-functions`** | Execution of pure functions inside `const` expressions | `const val = computeHash("key");` |
 | **`enhanced-parts`** | Generalized nested parts with imports and exports | `part 'subpart.dart';` with its own `import` |
 | **`static-extensions`** | Extension blocks with static members and constructors | `extension Math on double { static double pi = ...; }` |
-| **`this-promotion`** | Flow analysis type promotion directly on `this` | `if (this is Specialized) { ... }` |
+| **`this-promotion`** | Flow analysis type promotion directly on `this` *(graduating in Dart 3.15)* | `if (this is Specialized) { ... }` |
 | **`data-assets`** | Bundling and loading data assets in build hooks | `hook/build.dart` data asset integration |
 | **`anonymous-methods`** | Full anonymous method syntax with explicit returns | First-class inline anonymous methods |
 | **`unquoted-imports`** | Shorter import syntax without string quoting | Clean module import grammar |

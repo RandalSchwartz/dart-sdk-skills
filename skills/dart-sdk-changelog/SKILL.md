@@ -89,8 +89,8 @@ When writing or reviewing Dart code, selecting the correct minimum SDK lower bou
 | **Macros & Augmentations** | Metaprogramming | `augment`, `augmented()`, `import augment`, `@JsonCodable()`, 3-phase macro pipeline | [Macros & Augmentations Guide](references/macros-and-augmentations-guide.md) |
 | **Experimental Features** | Compiler Flags | `--enable-experiment`, Beta preview vs stable-gated release tiers, graduation matrix | [Experiments Guide](references/experimental-features-guide.md) |
 | **Legacy Rescue** | Migration Runbook | Dart 1.x/2.x to Modern 3.x modernization pipeline, null-safety bridge, package replacements | [Rescue Guide](references/rescuing-legacy-dart-apps.md) |
-| **Dart 3.14** | FFI & JS Interop | `NativeFinalizer.callback`, fast primitive JS array conversions | [3.14 Reference](references/whats-new-in-dart-3-14.md) |
-| **Dart 3.13** | Language & Runtime | Primary constructors, `this` constructor body, `new`/`factory` shorthands, `Future.pause`, synchronous isolates | [3.13 Reference](references/whats-new-in-dart-3-13.md) |
+| **Dart 3.14** | CLI, SIMD & JS Interop | `dart migrate`, `dart run -e`, `NativeFinalizer.callback`, `rangeEquals`, fast JS array & async `Function.toJS` conversions | [3.14 Reference](references/whats-new-in-dart-3-14.md) |
+| **Dart 3.13** | Language & Runtime | Primary constructors, `this` constructor body, `new`/`factory` shorthands, `Future.pause`, `List.unmodifiableOf` | [3.13 Reference](references/whats-new-in-dart-3-13.md) |
 | **Dart 3.12** | Language & Tooling | Private named parameters (`Point({this._x})`), `RegExp` spans, `dart run <pkg>@<ver>` | [3.12 Reference](references/whats-new-in-dart-3-12.md) |
 | **Dart 3.11** | Platform & Pub | Windows Unix domain sockets, Workspace globs (`pkgs/*`), `dart pub cache gc` | [3.11 Reference](references/whats-new-in-dart-3-11.md) |
 | **Dart 3.10** | Extensibility & CLI | Analyzer plugins stable, Hooks (native assets) stable, `dart install`, `@Deprecated` constructors | [3.10 Reference](references/whats-new-in-dart-3-10.md) |

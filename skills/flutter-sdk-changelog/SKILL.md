@@ -67,7 +67,7 @@ This skill provides an authoritative, structured reference for Flutter framework
 | Document | Focus Area | Description |
 | :--- | :--- | :--- |
 | [`material-ui-and-cupertino-ui-migration.md`](references/material-ui-and-cupertino-ui-migration.md) | Package Decoupling | Complete runbook for migrating from SDK-bundled material/cupertino to standalone `material_ui` and `cupertino_ui`. |
-| [`flutter-to-dart-version-matrix.md`](references/flutter-to-dart-version-matrix.md) | Version Mapping | Full mapping of Flutter 1.0–3.49+ to bundled Dart SDKs and engine milestones. |
+| [`flutter-to-dart-version-matrix.md`](references/flutter-to-dart-version-matrix.md) | Version Mapping | Full mapping of Flutter 1.0–3.50+ to bundled Dart SDKs and engine milestones. |
 | [`widget-deprecations-and-replacements.md`](references/widget-deprecations-and-replacements.md) | Widget Dictionary | Before/After code snippets for all deprecated Flutter widgets and properties. |
 | [`material-2-to-material-3-guide.md`](references/material-2-to-material-3-guide.md) | UI & Theming | Comprehensive Material 3 migration guide, dynamic color schemes, and new components. |
 | [`rescuing-legacy-flutter-apps.md`](references/rescuing-legacy-flutter-apps.md) | Upgrade Runbook | 5-phase structured runbook for stepping legacy Flutter apps to modern Flutter. |

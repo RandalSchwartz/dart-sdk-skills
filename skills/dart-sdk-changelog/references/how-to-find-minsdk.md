@@ -80,7 +80,7 @@ When identifying the minimum SDK for a feature or API:
    - Controlled strictly by the **Language Version** (`pubspec.yaml` lower bound).
    - If the language version is too low, the analyzer/compiler throws a syntax error or a diagnostic:
      `"This requires the '<feature>' language feature. Try updating your pubspec.yaml SDK constraint to '>=X.Y.0 <4.0.0'."`
-2. **Platform / Core Library APIs** (for example `Future.pause`, `List.unmodifiableOf`, `int.trailingZeroBitCount`, `Isolate.runSync`):
+2. **Platform / Core Library APIs** (for example `Future.pause`, `List.unmodifiableOf`, `int.trailingZeroBitCount`, `rangeEquals`):
    - Introduced in specific SDK releases.
    - Look for the `@Since('X.Y')` annotation in the SDK sources or the `Libraries` section of `CHANGELOG.md`.
 
@@ -143,12 +143,13 @@ To test that your package actually works with your stated minimum SDK constraint
 
 | Library API | Minimum Dart SDK | Description |
 | :--- | :--- | :--- |
+| `rangeEquals` (typed lists & `ByteData`) | `3.14.0` | High-performance range equality comparison |
+| `NativeFinalizer.callback` & `Abi.iosArm64e` / `macosArm64e` | `3.14.0` | Native finalizer callback pointer & Apple `arm64e` ABIs |
 | `Future.pause([Duration?])` | `3.13.0` | Pause without callback overhead |
 | `List.unmodifiableOf(elements)` | `3.13.0` | Type-safe unmodifiable list copy |
 | `Map.unmodifiableOf(map)` | `3.13.0` | Type-safe unmodifiable map copy |
 | `int.trailingZeroBitCount` / `oneBitCount` | `3.13.0` | Efficient bitwise count (ctz / popcount) |
 | `InterfaceAddress` (`NetworkInterface`) | `3.13.0` | Exposes `prefixLength` and `broadcast` |
-| `Isolate.runSync` / `create` / `pinToCurrentThread` | `3.13.0` | Synchronous isolate execution & thread pinning |
 | `JSFunction<T>` / `JSExportedDartFunction<T>` | `3.13.0` | Generic type arguments for JS function interop |
 | `RegExp` modifier spans `(?i:...)` | `3.12.0` | In-pattern regular expression modifier spans |
 | `JSIterable` / `JSIterator` / `toDartIterable` | `3.12.0` | JavaScript iteration protocols in `dart:js_interop` |

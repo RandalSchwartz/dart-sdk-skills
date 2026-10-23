@@ -47,8 +47,9 @@ A searchable reference mapping language features, keywords, syntax constructs, a
 | API / Feature | Minimum Dart SDK | Library | Description |
 | :--- | :--- | :--- | :--- |
 | `rangeEquals` (typed lists & `ByteData`) | `3.14.0` | `dart:typed_data` | High-performance range equality comparison |
-| `Int32x4` SIMD vector additions | `3.14.0` | `dart:typed_data` | Bitwise negation `~`, `splat`, comparisons, `zero()` |
-| `NativeFinalizer.callback` | `3.14.0` | `dart:ffi` | Exposes callback pointer |
+| `Int32x4` SIMD vector additions | `3.14.0` | `dart:typed_data` | Bitwise negation `~`, `splat`, comparisons, `zero()`, `>>>` |
+| `NativeFinalizer.callback` & `Abi.iosArm64e` / `macosArm64e` | `3.14.0` | `dart:ffi` | Exposes callback pointer and Apple pointer-auth ABIs |
+| Async `Function.toJS` & generic `external` extensions | `3.14.0` | `dart:js_interop` | Automatic `Future<T>` to `JSPromise` conversion & bounded generic extensions |
 | Primitive array conversions (`toDartDoubleList`, `toJS`) | `3.14.0` | `dart:js_interop` | High performance list-array conversions |
 | `JSArray.fromAsync` / `JSPromise.resolve`/`reject` | `3.14.0` | `dart:js_interop` | Async array creation and promise static helpers |
 | `toJSVarArgs` / `toJSCaptureThisVarArgs` | `3.14.0` | `dart:js_interop` | Direct JavaScript varargs capture into `JSArray` |
@@ -58,7 +59,6 @@ A searchable reference mapping language features, keywords, syntax constructs, a
 | `Map.unmodifiableOf` | `3.13.0` | `dart:core` | Strongly-typed unmodifiable map copy |
 | `int.trailingZeroBitCount` / `oneBitCount` | `3.13.0` | `dart:core` | Bitwise count operations |
 | `InterfaceAddress` | `3.13.0` | `dart:io` | Network interface address with prefix length |
-| `Isolate.runSync` / `Isolate.create` | `3.13.0` | `dart:isolate` | Synchronous isolate operations |
 | Generic `JSExportedDartFunction<T>` | `3.13.0` | `dart:js_interop` | Type parameter on JS function export |
 | `RegExp` Modifier Spans `(?i:...)` | `3.12.0` | `dart:core` | Inline regular expression modifier spans |
 | `JSIterable` / `JSIterator` / `toDartIterable` | `3.12.0` | `dart:js_interop` | JS iteration protocol integration |

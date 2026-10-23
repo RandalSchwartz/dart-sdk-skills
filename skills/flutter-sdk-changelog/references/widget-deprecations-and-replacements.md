@@ -354,10 +354,10 @@ Flutter 3.44 updated viewport scrolling internals to optimize rendering cache bo
 
 ---
 
-## 14. Upcoming Beta Features (Flutter 3.49+)
+## 14. Upcoming Beta Features (Flutter 3.49 / 3.50+)
 
 ### `DropdownButton` Enhancements
-In the Flutter 3.49 beta channel:
+In the Flutter 3.49 / 3.50 beta channel:
 - **`enabled` property**: Explicit boolean property added to `DropdownButton` to disable user interactions directly.
 - **Optional `onChanged`**: `onChanged` is no longer strictly required when `enabled: false` is supplied.
 

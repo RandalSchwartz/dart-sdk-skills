@@ -80,13 +80,7 @@ class Point {
 - **Cookie Date Parsing**: Restored RFC-compliant permissive cookie date parser algorithm.
 
 ### `dart:isolate`
-Synchronous and fine-grained isolate execution:
-- `Isolate.runSync`
-- `Isolate.create`
-- `Isolate.shutdownSync`
-- `Isolate.pinToCurrentThread` / `Isolate.isPinnedToCurrentThread`
-- `Isolate.runEventLoopSync`
-- `Isolate.onEvent` and `Isolate.handleEvent`
+- **Warning — Unshipped in Dart 3.14**: Experimental synchronous execution and event loop control APIs (`Isolate.runSync`, `Isolate.create`, `Isolate.shutdownSync`, `Isolate.pinToCurrentThread`, `Isolate.isPinnedToCurrentThread`, `Isolate.runEventLoopSync`, `Isolate.onEvent`, and `Isolate.handleEvent`) were accidentally exposed in Dart 3.13 and **unshipped in Dart 3.14** (along with gating `NativeCallable.isolateGroupBound` behind `--experimental-shared-data`; see [SDK issue #64285](https://github.com/dart-lang/sdk/issues/64285)). Do not rely on these APIs in production packages, as they will fail to compile on Dart 3.14+. Use `Isolate.run` for standard background isolate execution.
 
 ### `dart:js_interop`
 - **Generic `JSFunction` & `JSExportedDartFunction`**:

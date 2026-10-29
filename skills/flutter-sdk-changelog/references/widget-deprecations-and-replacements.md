@@ -17,6 +17,7 @@ A definitive migration dictionary of deprecated Flutter widgets, properties, met
 | `Scaffold.of(context).showSnackBar()`             | Deprecated in Flutter 2.0     | `ScaffoldMessenger.of(context).showSnackBar()`    | [ScaffoldMessenger](#7-scaffoldmessengershowsnackbar)            |
 | `Radio.activeColor`, `Checkbox.activeColor`       | Deprecated in Flutter 3.22    | `WidgetStateProperty.resolveWith(...)`            | [Control Tinting](#8-control-tinting--widgetstateproperty)       |
 | `describeEnum()`                                  | Removed in Flutter 3.47       | `Enum.name` (Dart 2.15+ native property)          | [describeEnum Migration](#10-describeenum--enumname)             |
+| `ContextMenuButtonType` / `item.type`             | Superseded in Flutter 3.47.9  | `ContextMenuButtonKind` / `item.kind`             | [ContextMenuButtonKind](#14-contextmenubuttontype--contextmenubuttonkind) |
 | `ReorderableListView.onReorder`                   | Deprecated in Flutter 3.44    | `onReorderWithOldAndNewIndex`                     | [ReorderableListView onReorder](#11-reorderablelistview-onreorder--onreorderwitholdandnewindex) |
 | `TextInputConnection.setStyle`                    | Deprecated in Flutter 3.44    | Direct platform text input styling                | [TextInputConnection setStyle](#12-textinputconnectionsetstyle-deprecation) |
 | `cacheExtent` / `cacheExtentStyle`                | Deprecated in Flutter 3.44    | Viewport constraints & cache allocation           | [Scroll cacheExtent](#13-scroll-cacheextent--cacheextentstyle)   |
@@ -354,7 +355,37 @@ Flutter 3.44 updated viewport scrolling internals to optimize rendering cache bo
 
 ---
 
-## 14. Upcoming Beta Features (Flutter 3.49 / 3.50+)
+## 14. `ContextMenuButtonType` ➔ `ContextMenuButtonKind`
+
+### Why it Changed (Flutter 3.47.9+)
+Because `material_ui` and `cupertino_ui` are published as decoupled packages on `pub.dev` and use exhaustive `switch` statements over `ContextMenuButtonType`, adding new values (such as `translate`) to the `ContextMenuButtonType` enum would cause breaking compilation errors in published design packages. Flutter 3.47.9 introduced the extensible, enum-like `ContextMenuButtonKind` class and `ContextMenuButtonItem.kind` (including `ContextMenuButtonKind.translate`). Switches over `ContextMenuButtonKind` should always include a wildcard (`_`) fallback branch.
+
+```dart
+// ❌ Legacy Enum (Breaks exhaustive switches when new platform actions are added)
+String labelForItem(ContextMenuButtonItem item) {
+  return switch (item.type) {
+    ContextMenuButtonType.cut => 'Cut',
+    ContextMenuButtonType.copy => 'Copy',
+    ContextMenuButtonType.paste => 'Paste',
+    _ => 'Other',
+  };
+}
+
+// ✅ Modern Extensible Kind (Flutter 3.47.9+)
+String labelForItem(ContextMenuButtonItem item) {
+  return switch (item.kind) {
+    ContextMenuButtonKind.cut => 'Cut',
+    ContextMenuButtonKind.copy => 'Copy',
+    ContextMenuButtonKind.paste => 'Paste',
+    ContextMenuButtonKind.translate => 'Translate',
+    _ => 'Other', // Required wildcard for forward compatibility
+  };
+}
+```
+
+---
+
+## 15. Upcoming Beta Features (Flutter 3.49 / 3.50+)
 
 ### `DropdownButton` Enhancements
 In the Flutter 3.49 / 3.50 beta channel:

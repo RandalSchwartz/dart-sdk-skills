@@ -99,6 +99,7 @@ This repository bundles two top-level, progressively disclosed skills:
 | **`BottomNavigationBar`**                     | `NavigationBar` (Material 3)                         | Flutter 3.0+           |
 | **`ToggleButtons`**                           | `SegmentedButton<T>` (Material 3)                    | Flutter 3.7+           |
 | **`describeEnum(e)`**                         | `e.name` (Dart 2.15+ native property)                | Flutter 3.47+          |
+| **`ContextMenuButtonType` / `item.type`**     | `ContextMenuButtonKind` / `item.kind`                | Flutter 3.47.9+        |
 | **`ReorderableListView.onReorder`**           | `onReorderWithOldAndNewIndex`                        | Flutter 3.44+          |
 
 ---

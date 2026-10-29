@@ -168,6 +168,8 @@ Direct extensions to convert between Dart primitive lists and JavaScript arrays 
 
 If targeting the bleeding-edge `main` / `dev` channel (`sdk: '^3.15.0'`):
 - **Type Promotion of `this` (`this-promotion`)**: Graduated to enabled-by-default in Dart 3.15 ([language #1397](https://github.com/dart-lang/language/issues/1397)). Type tests (`if (this is Circle) print(radius);`) and null checks in extensions (`if (this == null) return;`) now promote `this` directly without requiring a `var self = this;` local alias. Accompanied by the `unnecessary_this_alias` lint and automated `dart fix`.
+- **Improved Type Promotion at Control-Flow Join Points**: Common type promotions across control-flow branches are now preserved after the branches join, even when each branch promoted the variable via different intermediate types ([language #4757](https://github.com/dart-lang/language/issues/4757)).
 - **`dart:core` Safe Integer Constants**: Added `double.maxSafeInteger` (`9007199254740991`, `2^53 - 1`) and `double.minSafeInteger` (`-9007199254740991`, `-(2^53 - 1)`).
 - **`dart:math` 32-bit Wrapping Multiplication**: Added `imul32(int a, int b)` for 32-bit signed wrapping multiplication (SDK issue [#64491](https://github.com/dart-lang/sdk/issues/64491)).
+- **Analyzer `operator []=` Diagnostic Consistency**: Reports `argument_type_not_assignable` instead of `invalid_assignment` when a value assigned through `operator []=` (`a[i] = v`, `a[i] op= v`, `a[i] ??= v`, `a[i]++`) is not assignable to the parameter type (SDK issue [#64561](https://github.com/dart-lang/sdk/issues/64561)).
 - **Reproducible Pub Archives**: `dart pub publish` generates deterministic `.tar.gz` archives with zeroed timestamps and normalized permissions.

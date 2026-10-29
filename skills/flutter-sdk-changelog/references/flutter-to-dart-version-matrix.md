@@ -8,8 +8,8 @@ An authoritative, searchable reference mapping every major Flutter release to it
 
 | Flutter Version | Bundled Dart SDK | Release Date | Headline Framework Milestones |
 | :--- | :--- | :--- | :--- |
-| **Flutter 3.50+ (Beta)** | `Dart 3.14.x` | October 2026 (v3.50.0-0.2.pre) | **Current Beta Milestone**: Bundled with Dart 3.14 (`dart migrate`, `dart run -e`, SIMD vector operations, `rangeEquals`, hardware Wasm `v128`), `DropdownButton.enabled` property and optional `onChanged`, pub workspace native asset test fixes |
-| **Flutter 3.47+** | `Dart 3.13.x` | October 2026 (v3.47.8 stable) | **Current Stable Milestone**: Primary Constructors (`class C(...)`), concise constructor bodies, full standalone `material_ui` (1.1.0) & `cupertino_ui` (1.0.1) stabilization, removal of `describeEnum`, Android 14+ updatable Conscrypt APEX root CA store (Dart 3.13.7) |
+| **Flutter 3.50+ (Beta)** | `Dart 3.14.x` | October 2026 (v3.50.0-0.3.pre) | **Current Beta Milestone**: Bundled with Dart 3.14 (`dart migrate`, `dart run -e`, SIMD vector operations, `rangeEquals`, hardware Wasm `v128`), `DropdownButton.enabled` property and optional `onChanged`, Android Gradle Plugin (AGP) `9.1.1` minimum check |
+| **Flutter 3.47+** | `Dart 3.13.x` | October 2026 (v3.47.9 stable) | **Current Stable Milestone**: Primary Constructors (`class C(...)`), concise constructor bodies, full standalone `material_ui` (1.1.0) & `cupertino_ui` (1.0.1) stabilization, extensible `ContextMenuButtonKind` & `ContextMenuButtonItem.kind`, removal of `describeEnum`, pub workspace native asset test fixes, Android 14+ updatable Conscrypt APEX root CA store (Dart 3.13.7) |
 | **Flutter 3.44+** | `Dart 3.12.x` | May 2026 (v3.44.9 stable) | **Decoupled Architecture & SPM Milestone**: Standalone `material_ui` and `cupertino_ui` packages introduced (`sdk: ">=3.44.0"`), Swift Package Manager becomes default dependency manager for Apple platforms, headless `package:flutter/widgets.dart` core architecture |
 | **Flutter 3.41+** | `Dart 3.11.x` | February 2026 (v3.41.9 stable) | Bundled with Dart 3.11 (Windows Unix domain sockets, `JSSymbol`), performance tooling and DevTools integrations |
 | **Flutter 3.38+** | `Dart 3.10.x` | November 2025 (v3.38.10 stable) | Bundled with Dart 3.10 (`Future.syncValue`, granular `@Deprecated` annotations), enhanced text rendering |
@@ -43,9 +43,9 @@ An authoritative, searchable reference mapping every major Flutter release to it
 
 1. **`flutter --version` CLI output**:
    ```bash
-   Flutter 3.47.8 • channel stable
-   Framework • revision 737ba8f885
-   Engine • revision cf636b1dfb
+   Flutter 3.47.9 • channel stable
+   Framework • revision c197ca5199
+   Engine • revision 89c39edfdf
    Tools • Dart 3.13.7 • DevTools 2.60.0
    ```
 2. **`pubspec.yaml` environment bounds**:

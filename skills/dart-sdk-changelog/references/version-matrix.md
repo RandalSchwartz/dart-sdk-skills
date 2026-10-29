@@ -8,6 +8,7 @@ A searchable reference mapping language features, keywords, syntax constructs, a
 
 | Feature / Syntax | Minimum Dart SDK | Example / Keyword | Category |
 | :--- | :--- | :--- | :--- |
+| **`this` Type Promotion & Join-Point Promotion** | `3.15.0` *(dev)* | `if (this is Circle) print(radius);` | Flow Analysis |
 | **Primary Constructors** | `3.13.0` | `class Point(var int x, var int y);` / `this : assert(...)` | Classes & OOP |
 | **Constructor Keyword Shorthands** | `3.13.0` | `class Point { new(this.x); factory clone(...) => ...; }` | Constructors |
 | **Private Named Parameters** | `3.12.0` | `Point({required this._x, required this._y});` | Parameters |
